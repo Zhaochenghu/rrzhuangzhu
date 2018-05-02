@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <com.renren0351.rrzzapp.wigets.SwipeFrameLayout
+        android:id="@+id/rl_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <!-- 底部弹出窗口 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lv_white"
+            android:minHeight="260dp"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lv_bottom_divider"/>
+
+            <!-- 第一行 -->
+            <TextView
+                android:id="@+id/tv_ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_ac"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_three"/>
+
+            <TextView
+                android:id="@+id/tv_dc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_ac"
+                android:drawableLeft="@drawable/ic_dc"
+                android:drawablePadding="4dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_three"/>
+
+            <ImageButton
+                android:id="@+id/ivb_favor"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_favor"/>
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ivb_favor"
+                android:background="@color/lv_bottom_divider"/>
+
+            <!-- 第二行 -->
+            <TextView
+                android:id="@+id/tv_distance"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/view_divider"
+                android:drawableBottom="@drawable/ic_location"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_two"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_divider"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_toLeftOf="@id/tv_distance"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingBottom="4dp"
+                android:paddingTop="10dp"
+                android:singleLine="true"
+                android:textColor="@color/primary_text_black"
+                android:textSize="@dimen/ts_lel_two"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:paddingBottom="8dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_three"/>
+
+            <View
+                android:id="@+id/view_divider_1"
+                android:layout_width="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/tv_distance"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@color/lv_bottom_divider"/>
+
+            <!-- 第三行 -->
+            <ImageView
+                android:id="@+id/iv_rmb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_divider_1"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin_sub"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_rmb"/>
+
+            <TextView
+                android:id="@+id/tv_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_right"
+                android:paddingRight="10dp"
+                android:layout_below="@id/view_divider_1"
+                android:layout_toRightOf="@id/iv_rmb"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="@dimen/activity_horizontal_margin_sub"
+                android:paddingTop="@dimen/activity_horizontal_margin_sub"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_three"/>
+
+            <View
+                android:id="@+id/view_divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/tv_service"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@color/lv_bottom_divider"/>
+
+            <!-- 第四行 -->
+            <ImageView
+                android:id="@+id/iv_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_divider_2"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin_sub"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_pay"/>
+
+            <TextView
+                android:id="@+id/tv_pay_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_divider_2"
+                android:layout_toRightOf="@id/iv_pay"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="@dimen/activity_horizontal_margin_sub"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_three"/>
+
+            <View
+                android:id="@+id/view_divider_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_pay_type"
+                android:background="@color/lv_bottom_divider"/>
+
+            <Button
+                android:id="@+id/btn_detail"
+                style="@style/red_btn"
+                android:layout_below="@id/view_divider_3"
+                android:layout_margin="@dimen/activity_horizontal_margin_sub"
+                android:paddingBottom="@dimen/activity_horizontal_margin_sub"
+                android:paddingTop="@dimen/activity_horizontal_margin_sub"
+                android:text="@string/see_details"
+                android:visibility="visible"/>
+        </RelativeLayout>
+
+    </com.renren0351.rrzzapp.wigets.SwipeFrameLayout>
+</FrameLayout>

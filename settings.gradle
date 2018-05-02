@@ -1,0 +1,4 @@
+include ':app', ':baseframe', ':model', ':presenter', ':fragmentation', ':annotations', ':compiler', ':lib-zxing', ':lib-imagespickers'
+project(':fragmentation').projectDir = new File(rootDir, 'thirdLibs/fragmentation')
+project(':compiler').projectDir = new File(rootDir, 'compileInject/compiler');
+project(':annotations').projectDir = new File(rootDir, 'compileInject/annotations');

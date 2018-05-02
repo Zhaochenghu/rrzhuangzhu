@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lv_bg_gray"
+    android:orientation="vertical">
+
+    <!-- title -->
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_size"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin">
+
+        <RelativeLayout
+            android:id="@+id/rl_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search"
+            android:transitionName="@string/transition_search">
+
+            <ImageView
+                android:id="@+id/iv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="@dimen/activity_horizontal_margin_sub"
+                android:src="@drawable/ic_search"/>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@id/iv_1"
+                android:background="@color/transparent"
+                android:hint="搜索充电站"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_two"/>
+
+            <ImageButton
+                android:id="@+id/ivb_del"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_del"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minWidth="45dp"
+            android:text="@string/cancel"
+            android:textColor="@color/lv_white"
+            android:textSize="@dimen/ts_lel_two"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/search_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_1"
+        android:layout_marginTop="20dp"
+        android:background="@color/lv_white">
+
+        <!-- 历史搜索 -->
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="历史搜索"
+            android:textColor="@color/secondary_text_black"
+            android:textSize="@dimen/ts_lel_two"/>
+
+        <Button
+            android:id="@+id/btn_clear"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:text="清空历史数据"/>
+
+        <View
+            android:id="@+id/view_divider_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_1"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:background="@color/lv_bottom_divider"/>
+
+        <!-- 显示历史 -->
+        <com.renren0351.rrzzapp.wigets.flexbox.TagFlowLayout
+            android:id="@+id/flow_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_divider_1"
+            app:alignContent="flex_start"
+            app:alignItems="center"
+            app:defaultDrawable="@drawable/bg_flow_selector"
+            app:defaultTextColor="@color/lv_black"
+            app:dividerDrawable="@drawable/bg_flow_divider"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start"
+            app:mode="SINGLE"
+            app:selectDrawable="@drawable/bg_flow_unselect"
+            app:selectTextColor="@color/lv_black"
+            app:showDivider="beginning|middle|end"/>
+    </RelativeLayout>
+
+    <!-- 显示搜索到的结果 -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search_result"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_1"/>
+
+    <!-- 收藏点 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_history"
+        android:layout_marginTop="20dp"
+        android:background="@color/lv_white"
+        android:visibility="gone">
+
+        <!-- 历史搜索 -->
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_horizontal_margin_sub"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:text="我的收藏点"
+            android:textColor="@color/secondary_text_black"
+            android:textSize="@dimen/ts_lel_two"/>
+
+        <View
+            android:id="@+id/view_divider_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_2"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:background="@color/lv_bottom_divider"/>
+
+        <TextView
+            android:id="@+id/tv_favor"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_below="@id/view_divider_2"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/activity_horizontal_margin_sub"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="登陆后可查看管理收藏的充电点"
+            android:textColor="@color/secondary_text_black"
+            android:textSize="@dimen/ts_lel_three"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/view_divider_2"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/btn_red_stroke"
+            android:text="登陆"
+            android:textColor="@color/colorPrimary"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_favor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/view_divider_2"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</RelativeLayout>

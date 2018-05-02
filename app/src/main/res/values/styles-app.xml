@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="map_navigation_list">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">@dimen/ts_lel_two</item>
+        <item name="android:textColor">@color/secondary_text_black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="view_charging_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/ts_lel_two</item>
+        <item name="android:textColor">@color/secondary_text_black</item>
+    </style>
+
+    <style name="view_charging_value" parent="view_charging_text">
+        <item name="android:textSize">@dimen/ts_lel_two</item>
+        <item name="android:textColor">@color/primary_text_black</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <!-- Navigation Header -->
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">#FFE1E8EB</item>
+    </style>
+</resources>

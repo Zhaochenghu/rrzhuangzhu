@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_charging"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lv_white"
+    android:padding="16dp"
+    android:visibility="visible"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_station_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        tools:text="河北聚众新能源有限公司充电总站"
+        android:textColor="@color/primary_text_black"
+        android:textSize="@dimen/ts_lel_two"
+        android:textStyle="bold"
+        />
+
+    <FrameLayout
+        android:id="@+id/fl_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_station_name"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp">
+
+        <com.renren0351.rrzzapp.wigets.ProgressCircleView
+            android:id="@+id/pcv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            tools:text="45%\n充电中"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fl_1"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/ts_lel_two"
+        tools:text="充电中"/>
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fl_1"
+        android:text="@string/pile_code"
+        android:textSize="@dimen/ts_lel_two"/>
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_number"
+        android:layout_marginTop="8dp"
+        android:background="@color/lv_bottom_divider"/>
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_red_selector"
+        android:text="@string/stop_charge"
+        android:textColor="@color/primary_text_white"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_stop"
+        android:layout_below="@id/view_1"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2">
+
+            <TextView
+                android:id="@+id/tv_1"
+                style="@style/view_charging_text"
+                android:text="已充电量"/>
+
+            <TextView
+                android:id="@+id/tv_charging_total"
+                style="@style/view_charging_value"
+                tools:text="11.5 度"/>
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_1"
+                android:background="@color/lv_bottom_divider"/>
+
+            <TextView
+                android:id="@+id/tv_2"
+                style="@style/view_charging_text"
+                android:layout_below="@id/view_2"
+                android:text="已充时长"/>
+
+            <TextView
+                android:id="@+id/tv_charging_time"
+                style="@style/view_charging_value"
+                android:layout_below="@id/tv_charging_total"
+                tools:text="20 分钟"/>
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_2"
+                android:background="@color/lv_bottom_divider"/>
+
+            <TextView
+                android:id="@+id/tv_3"
+                style="@style/view_charging_text"
+                android:layout_below="@id/view_3"
+                android:text="总费用"/>
+
+            <TextView
+                android:id="@+id/tv_charging_pay"
+                style="@style/view_charging_value"
+                android:layout_below="@id/tv_charging_time"
+                tools:text="13.49 元"/>
+
+            <View
+                android:id="@+id/view_4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_3"
+                android:background="@color/lv_bottom_divider"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_5"
+                style="@style/view_charging_text"
+                android:paddingLeft="16dp"
+                android:text="@string/voltage"/>
+
+            <TextView
+                android:id="@+id/tv_charging_v"
+                style="@style/view_charging_value"
+                tools:text="629 V"/>
+
+            <View
+                android:id="@+id/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_5"
+                android:background="@color/lv_bottom_divider"/>
+
+            <TextView
+                android:id="@+id/tv_6"
+                style="@style/view_charging_text"
+                android:layout_below="@id/view_5"
+                android:paddingLeft="16dp"
+                android:text="@string/current"/>
+
+            <TextView
+                android:id="@+id/tv_charging_a"
+                style="@style/view_charging_value"
+                android:layout_below="@id/tv_charging_v"
+                tools:text="46 A"/>
+
+            <View
+                android:id="@+id/view_6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_6"
+                android:background="@color/lv_bottom_divider"/>
+
+            <TextView
+                android:id="@+id/tv_7"
+                style="@style/view_charging_text"
+                android:layout_below="@id/view_6"
+                android:paddingLeft="16dp"
+                android:text="@string/power"/>
+
+            <TextView
+                android:id="@+id/tv_charging_p"
+                style="@style/view_charging_value"
+                android:layout_below="@id/tv_charging_a"
+                tools:text="30 kW"/>
+
+            <View
+                android:id="@+id/view_7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_7"
+                android:background="@color/lv_bottom_divider"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

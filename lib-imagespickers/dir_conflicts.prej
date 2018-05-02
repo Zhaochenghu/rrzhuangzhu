@@ -1,0 +1,12 @@
+Trying to change property 'svn:ignore' from '*.iml
+
+build
+' to '*.iml
+
+build
+',
+but the property has been locally changed from '*.iml
+
+build
+' to 'build
+'.

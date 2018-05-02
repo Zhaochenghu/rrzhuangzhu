@@ -1,0 +1,16 @@
+syntax = "proto3"; // 协议版本 proto2 | proto3
+
+option java_package = "com.sojoline.model.protobufdata";
+//option java_outer_classname = "DataPerson"; // 外部类的名称，不能与下面的内部类重名
+
+// 指定输出位置，以及编译的文件
+//protoc --java_out=./ ./data.student.proto
+
+message Student {
+
+    string name = 1;
+    int32 age = 2;
+    string sex = 3;
+    string mark = 4;
+}
+

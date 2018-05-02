@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <include
+        layout="@layout/common_header"/>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_red_stroke"
+            android:hint="请输入充电卡号"
+            android:inputType="number"
+            android:padding="10dp" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:src="@drawable/ic_search_red"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/lv_white"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="没有此充电卡"
+        android:textColor="@color/lv_red"
+        android:textSize="@dimen/ts_lel_one"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/ll_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_red_stroke"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/tv_card_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="卡号：-------"
+            android:textSize="@dimen/ts_lel_two"/>
+        <TextView
+            android:id="@+id/tv_card_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="类型：-------"
+            android:textSize="@dimen/ts_lel_two"/>
+        <TextView
+            android:id="@+id/tv_card_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="持卡人姓名：-------"
+            android:textSize="@dimen/ts_lel_two"/>
+        <TextView
+            android:id="@+id/tv_card_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="手机号：-------"
+            android:textSize="@dimen/ts_lel_two"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_bind"
+        style="@style/red_btn"
+        android:layout_marginTop="20dp"
+        android:text="绑  定"/>
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lv_white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/fl_root"
+        layout="@layout/common_header"/>
+
+    <View android:id="@+id/view_1"
+          style="@style/Mime_Horizontal_line"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="50dp"
+          android:layout_marginLeft="@dimen/activity_horizontal_margin"
+          android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+    <!-- 累计充电金额 -->
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_1"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="累计充电金额"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="160元"/>
+
+    <View android:id="@+id/view_2"
+          style="@style/Mime_Horizontal_line"
+          android:layout_above="@id/tv_money"
+          android:layout_marginLeft="@dimen/activity_horizontal_margin"
+          android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+    <!-- 累计充电时长 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_2"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="累计充电时长"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="2小时"/>
+
+    <View android:id="@+id/view_3"
+          style="@style/Mime_Horizontal_line"
+          android:layout_above="@id/tv_time"
+          android:layout_marginLeft="@dimen/activity_horizontal_margin"
+          android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+    <!-- 累计充电电量 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_3"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="累计充电电量"/>
+
+    <TextView
+        android:id="@+id/tv_power"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_3"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="30%"/>
+
+    <View
+        android:id="@+id/view_4"
+        style="@style/Mime_Horizontal_line"
+        android:layout_above="@id/tv_power"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+    <!-- 上次剩余电量 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_4"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="上次剩余电量"/>
+
+    <TextView
+        android:id="@+id/tv_remain"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@id/view_4"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="30%"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tv_remain"
+        android:layout_below="@id/fl_root"
+        android:paddingLeft="72dp"
+        android:paddingRight="72dp">
+
+        <com.renren0351.rrzzapp.wigets.ProgressCircleView
+            android:id="@+id/pcv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/line1"
+        layout="@layout/common_header"/>
+    <LinearLayout
+        android:id="@+id/ll_next"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            style="@style/Mime_Horizontal_line"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:padding="5dp"
+                android:id="@+id/tv_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已选择0个，共计00元"
+                android:textSize="@dimen/ts_lel_two"/>
+            <TextView
+                android:id="@+id/tv_all"
+                android:padding="5dp"
+                android:drawableRight="@drawable/ic_unselect"
+                android:drawablePadding="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全选"
+                android:textSize="@dimen/ts_lel_two"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_marginTop="5dp"
+            style="@style/red_btn"
+            android:text="下一步"
+            android:enabled="false"
+            android:layout_marginBottom="3dp"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_above="@id/ll_next"
+        android:layout_below="@id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lv_bg_gray">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

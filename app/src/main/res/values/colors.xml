@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- #e5002c -->
+    <!-- #ed3b5d -->
+    <color name="colorPrimary">#09963c</color>
+    <color name="colorPrimaryDark">#09963c</color>
+    <color name="colorAccent">#09963c</color>
+    <!--#F9F9F9 第二种顶部标题色-->
+
+    <!-- 按下的button -->
+    <color name="lv_btn_focused">#0d862f</color>
+    <!-- 原色的50%透明度 -->
+    <color name="lv_btn_unable">#7FED3B5D</color>
+    <color name="lv_btn_unable_3">#33ED3B5D</color>
+    <color name="lv_bottom_divider">#E1E2E4</color>
+    <!--<color name="bottom_divider_1">#F0F1F1</color>-->
+    <color name="lv_bg_gray">#EDEEEF</color>
+    <color name="lv_red">#FF0000</color>
+    <color name="text_color">#FFFFFF</color>
+    <color name="divider_color">@color/lv_bottom_divider</color>
+    <color name="dialog_body_bg">@color/lv_white</color>
+
+    <color name="dialog_border_bg">@color/colorPrimary</color>
+    <color name="dialog_title_bg">@color/colorPrimary</color>
+    <color name="dialog_msg_color">@color/lv_black</color>
+
+    <color name="dialog_bg">#77000000</color>
+
+    <color name="license_blue">#3366ff</color>
+    <color name="license_yellow">#ffd700</color>
+
+    <!--工作-->
+    <color name="state_working">#f4ea2a</color>
+    <!--待机、完成-->
+    <color name="state_idle">#1afa29</color>
+    <!--离线-->
+    <color name="state_offline">#bfbfbf</color>
+    <!--告警-->
+    <color name="state_warning">#d81e06</color>
+</resources>

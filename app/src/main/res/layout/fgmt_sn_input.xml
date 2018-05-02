@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充电桩编号:"
+            android:textSize="@dimen/ts_lel_two"/>
+        <EditText
+            android:id="@+id/et_pile"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_red_stroke"
+            android:maxLines="1"
+            android:maxLength="25"
+            android:hint="输入充电桩的编号"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充电枪编号:"
+            android:textSize="@dimen/ts_lel_two"/>
+        <EditText
+            android:id="@+id/et_gun"
+            android:hint="例如：枪1输入“ 1”"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_red_stroke"
+            android:digits="0123456789"
+            android:maxLength="2"
+            android:maxLines="1"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@drawable/btn_red_selector"
+        android:text="@string/ok"
+        android:textColor="@color/primary_text_white"/>
+
+    <Button
+        android:id="@+id/btn_cancel"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:visibility="gone"/>
+</LinearLayout>

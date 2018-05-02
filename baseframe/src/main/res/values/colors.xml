@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e5002c</color>
+    <color name="colorPrimaryDark">#e5002c</color>
+    <color name="colorAccent">#e5002c</color>
+
+    <!-- Black 87% -->
+    <color name="primary_text_black">#de000000</color>
+    <!-- Black 54% -->
+    <color name="secondary_text_black">#8a000000</color>
+
+    <!-- White 87% -->
+    <color name="primary_text_white">#deffffff</color>
+    <!-- White 38% -->
+    <color name="secondary_text_white">#61ffffff</color>
+    <!--底部导航未选中颜色值-->
+    <color name="tab_unselect">#c9c9c9</color>
+    <!--全局背景色-->
+    <!--<color name="background">#dadada</color>-->
+    <color name="background">#F1F0F6</color>
+
+    <color name="lv_white">@android:color/white</color>
+    <color name="lv_black">@android:color/black</color>
+</resources>

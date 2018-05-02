@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/common_header"/>
+    <LinearLayout
+        android:id="@+id/info_ll_photo"
+        style="@style/Info_LinearLayout">
+        <TextView
+            android:textColor="@color/primary_text_black"
+            style="@style/Mime_TextView_Pri"
+            android:text="@string/user_photo" />
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center_vertical">
+            <ImageView
+                android:id="@+id/info_iv_head"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_photo_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:src="@drawable/ic_right"
+                style="@style/Mime_IV_Right" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        style="@style/Mime_Horizontal_line"/>
+    <LinearLayout
+        android:id="@+id/info_ll_nick"
+        style="@style/Info_LinearLayout">
+        <TextView
+            style="@style/Mime_TextView_Pri"
+            android:text="@string/user_nick" />
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/info_tv_nick"
+                style="@style/Mime_TextView_Sec"
+                android:layout_marginRight="10dp"
+                android:text="双杰"/>
+            <ImageView
+                android:src="@drawable/ic_right"
+                style="@style/Mime_IV_Right" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        style="@style/Mime_Horizontal_line"/>
+    <LinearLayout
+        android:id="@+id/info_ll_gender"
+        style="@style/Info_LinearLayout">
+        <TextView
+            style="@style/Mime_TextView_Pri"
+            android:text="@string/user_gender" />
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/info_tv_gender"
+                style="@style/Mime_TextView_Sec"
+                android:layout_marginRight="10dp"
+                android:text="男"/>
+            <ImageView
+                android:src="@drawable/ic_right"
+                style="@style/Mime_IV_Right" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        style="@style/Mime_Horizontal_line"/>
+    <LinearLayout
+        android:id="@+id/info_ll_email"
+        style="@style/Info_LinearLayout">
+        <TextView
+            style="@style/Mime_TextView_Pri"
+            android:text="@string/email" />
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/info_tv_email"
+                android:layout_marginRight="10dp"
+                style="@style/Mime_TextView_Sec"
+                android:text="sojo300444@136.com"/>
+            <ImageView
+                android:src="@drawable/ic_right"
+                style="@style/Mime_IV_Right" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        style="@style/Mime_Horizontal_line"/>
+
+</LinearLayout>

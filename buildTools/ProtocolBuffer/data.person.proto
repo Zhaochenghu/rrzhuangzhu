@@ -1,0 +1,8 @@
+syntax = "proto3"; // 协议版本 proto2 | proto3
+import "data.student.proto";
+
+option java_package = "com.sojoline.model.protobufdata";
+
+message Person {
+    repeated Student student = 1;
+}

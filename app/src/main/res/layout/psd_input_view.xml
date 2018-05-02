@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom">
+
+    <LinearLayout
+        android:id="@+id/linear_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 6位密码框布局，需要一个圆角边框的shape作为layout的背景 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/pay_input_bg"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <!--
+                 inputType设置隐藏密码明文
+                 textSize设置大一点，否则“点”太小了，不美观
+            -->
+            <TextView
+                android:id="@+id/view_tv_pass1"
+                style="@style/Psd_Input_TV"/>
+
+            <View style="@style/Mime_Vertical_line"/>
+
+            <TextView
+                android:id="@+id/view_tv_pass2"
+                style="@style/Psd_Input_TV"/>
+
+            <View
+                style="@style/Mime_Vertical_line"/>
+
+            <TextView
+                android:id="@+id/view_tv_pass3"
+                style="@style/Psd_Input_TV"/>
+
+            <View
+                style="@style/Mime_Vertical_line"/>
+
+            <TextView
+                android:id="@+id/view_tv_pass4"
+                style="@style/Psd_Input_TV"/>
+
+            <View
+                style="@style/Mime_Vertical_line"/>
+
+            <TextView
+                android:id="@+id/view_tv_pass5"
+                style="@style/Psd_Input_TV"/>
+
+            <View
+                style="@style/Mime_Vertical_line"/>
+
+            <TextView
+                android:id="@+id/view_tv_pass6"
+                style="@style/Psd_Input_TV"/>
+        </LinearLayout>
+
+        <!-- 忘记密码链接 -->
+
+        <TextView
+            android:id="@+id/view_tv_forgetPsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="15dp"
+            android:text="忘记密码？"
+            android:textColor="#354EEF"
+            android:textSize="@dimen/ts_lel_two"/>
+    </LinearLayout>
+    <!-- 输入键盘 -->
+
+    <TextView
+        android:id="@+id/ll_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_pass"
+        android:layout_marginTop="16dp"
+        android:background="@color/lv_white"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="安全输入键盘"
+        android:textSize="@dimen/ts_lel_three"/>
+
+    <ImageView
+        android:id="@+id/ll_image"
+        style="@style/Mime_Horizontal_line"
+        android:layout_below="@id/ll_text"/>
+
+    <GridView
+        android:id="@+id/view_gv_keybord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_image"
+        android:horizontalSpacing="0.5dp"
+        android:listSelector="@null"
+        android:numColumns="3"
+        android:verticalSpacing="0.5dp"/>
+</RelativeLayout>

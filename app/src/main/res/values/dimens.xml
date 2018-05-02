@@ -1,0 +1,21 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin_sub">8dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin_sub">8dp</dimen>
+
+    <dimen name="btn_radius">3dp</dimen>
+
+    <dimen name="actionbar_size">48dp</dimen>
+    <!-- 文字字体大小
+     24sp / 20sp / 17sp / 14sp / 12sp / 10sp
+     -->
+    <dimen name="ts_lel_one">20sp</dimen>
+    <dimen name="ts_lel_two">16sp</dimen>
+    <dimen name="ts_lel_three">14sp</dimen>
+    <dimen name="ts_lel_four">10sp</dimen>
+
+    <!-- filter popu item height-->
+    <dimen name="filter_item">38dp</dimen>
+</resources>

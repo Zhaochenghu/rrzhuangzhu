@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/common_header"/>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/et_suggest"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="180dp"
+        android:gravity="start"
+        android:maxLength="300"
+        android:background="@color/lv_white"
+        android:lineSpacingMultiplier="1.2"
+        android:hint="我们的进步离不开您的建议。"
+        android:textSize="@dimen/ts_lel_two"
+        android:textColor="@color/primary_text_black"/>
+    <TextView
+        android:id="@+id/tv_num"
+        android:background="@color/lv_white"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="15dp"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/limit_200"/>
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_marginTop="30dp"
+        style="@style/red_btn"
+        android:text="@string/submit"/>
+
+</LinearLayout>

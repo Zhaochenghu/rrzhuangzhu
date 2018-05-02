@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/layout_header"
+        layout="@layout/common_header"/>
+
+    <TextView
+        android:id="@+id/tv_reset_pay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_size"
+        android:layout_below="@id/layout_header"
+        android:layout_marginTop="10dp"
+        android:background="@color/lv_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="修改支付密码"
+        android:textColor="@color/primary_text_black"
+        android:textSize="@dimen/ts_lel_two"/>
+
+    <TextView
+        android:id="@+id/tv_pwd_pay_back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_size"
+        android:layout_below="@id/tv_reset_pay"
+        android:layout_marginTop="1dp"
+        android:background="@color/lv_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="找回支付密码"
+        android:textColor="@color/primary_text_black"
+        android:textSize="@dimen/ts_lel_two"/>
+
+    <!-- 没有设置过显示 -->
+    <LinearLayout
+        android:id="@+id/ll_init_pay_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_reset_pay"
+        android:layout_marginTop="16dp"
+        android:background="@color/lv_white"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_phoneNum"
+                android:textSize="@dimen/ts_lel_three"/>
+            <TextView
+                android:id="@+id/payset_tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="156****1234"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/ts_lel_three"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收到的短信验证码"
+                android:textSize="@dimen/ts_lel_three"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:minHeight="42dp"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/General_Type_One"
+                android:text="@string/code"/>
+            <EditText
+                android:id="@+id/payset_et_code"
+                style="@style/EditText_Input"
+                android:layout_weight="4"
+                android:hint="@string/input_code"
+                android:inputType="number"
+                android:maxLength="6"
+                android:paddingLeft="6dp"/>
+            <Button
+                android:id="@+id/payset_bt_send"
+                style="@style/Button_Send_Code"
+                android:layout_weight="11"
+                android:text="@string/send_code"/>
+        </LinearLayout>
+
+        <View style="@style/Mime_Horizontal_line"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/payset_bt_verify"
+        style="@style/red_btn"
+        android:layout_below="@id/ll_init_pay_pwd"
+        android:layout_marginTop="30dp"
+        android:enabled="false"
+        android:text="@string/verify"/>
+
+    <LinearLayout
+        android:id="@+id/ll_set_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/Mime_TextView_Sec"
+            android:layout_centerHorizontal="true"
+            android:text="@string/input_pay_code"/>
+
+        <TextView
+            android:id="@+id/tv_notice"
+            style="@style/Mime_TextView_Sec"
+            android:layout_centerHorizontal="true"
+            android:text="@string/input_pay_code"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/ts_lel_three"
+            android:visibility="gone"/>
+
+        <com.renren0351.rrzzapp.custom.PsdInputView
+            android:id="@+id/view_set_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</RelativeLayout>

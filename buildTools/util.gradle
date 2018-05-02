@@ -1,0 +1,105 @@
+def refreshVersionCode(isRelease) {
+    def versionPropsFile = file('../buildTools/version.properties')
+    if (!versionPropsFile.exists()) {
+        versionPropsFile.createNewFile()
+        def os = new FileWriter(versionPropsFile)
+        os.write("VERSION_CODE_DATE=19910107")
+        os.write("\r\n")
+        os.write("VERSION_CODE_TIME=1")
+        os.close()
+    }
+
+    def Properties versionProps = new Properties()
+    versionProps.load(new FileInputStream(versionPropsFile))
+    def codeDate = versionProps['VERSION_CODE_DATE'].toInteger()
+    def codeTime = versionProps['VERSION_CODE_TIME'].toInteger()
+    // 修改Date需要初始化一次Time
+    if (-1 == codeDate || codeDate != buildVersionCodeTime().toInteger()) {
+        codeDate = buildVersionCodeTime()
+        codeTime = 1
+    }
+    //Time修正
+    if (-1 == codeTime)
+        codeTime = 1
+    if (isRelease) {
+        if (codeTime >= 99) {
+            codeTime = 1
+        } else {
+            codeTime = codeTime + 1;
+        }
+    }
+    versionProps['VERSION_CODE_DATE'] = codeDate.toString()
+    versionProps['VERSION_CODE_TIME'] = codeTime.toString()
+    versionProps.store(versionPropsFile.newWriter(), null)
+
+    VERSION_CODE_DATE = codeDate
+    VERSION_CODE_TIME = codeTime
+}
+
+def buildVersionCodeTime() {
+    def date = new Date()
+    def format = date.format('yyyyMMdd');
+    return format;
+}
+
+////对于 android library 编译,我会 disable 所有的 debug 编译任务
+//def disableDebugBuild() {
+//    def targetTasks = project.findAll {
+//        task -> task.name.contains("Debug")
+//    }
+//    targetTasks.each {
+//        println "disable debug task : ${it.name}"
+//        it.setEnabled false
+//    }
+//}
+
+//复制APK到指定位置
+def copyFile(srcFile, dstFile) {
+    def dir = new File(srcFile)
+    if (!dir.exists()) {
+        dir.mkdirs()
+    }
+
+    def dstF = new File(dstFile)
+    if (dstF.exists())
+        dstF.delete()
+
+    copy {
+        from srcFile
+        into dstFile
+        include '*.apk', '*.skin'
+        exclude '**/*-unaligned.apk', '**/*-debug.apk'
+    }
+}
+
+def renameReleaseApk(applicationVariants) {
+    refreshVersionCode(false)
+    applicationVariants.all {
+        variant ->  // ApplicationVariant
+            variant.outputs.each {
+                output -> //
+                    def file = output.outputFile;
+                    if ('release'.equals(variant.buildType.name)) {
+                        def apkName = "${variant.productFlavors[0].name}_${variant.versionCode}_V${variant.versionName}.apk"
+                        def apkFile = new File(file.getParent(), apkName)
+                        output.outputFile = apkFile
+                    }
+            }
+    }
+}
+
+ext {
+    refreshVersionCode = this.&refreshVersionCode
+    disableDebugBuild = this.&disableDebugBuild
+    renameReleaseApk = this.&renameReleaseApk
+    copyFile = this.&copyFile
+
+    // keystore 的参数配置
+    RELEASE_KEY_PAHT = "../sojo.jks"
+    RELEASE_KEY_PASSWORD = "sojocharging"
+    RELEASE_KEY_ALIAS = "charging"
+    RELEASE_STORE_PASSWORD = "sojocharging"
+    // release版本APK的版本号
+    VERSION_CODE_DATE = 1
+    VERSION_CODE_TIME = 1
+}

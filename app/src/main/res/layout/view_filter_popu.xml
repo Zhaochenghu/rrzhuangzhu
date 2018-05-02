@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@drawable/bg_filter_popu"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="20dp">
+        <!-- 空闲 -->
+        <TextView
+            android:id="@+id/tv_1"
+            style="@style/tv_filter"
+            android:text="@string/only_idle"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swc_idle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_sub"
+            android:layout_toRightOf="@id/tv_1"
+            android:minHeight="@dimen/filter_item"/>
+
+        <!-- 慢充 -->
+        <TextView
+            android:id="@+id/tv_2"
+            style="@style/tv_filter"
+            android:layout_below="@id/tv_1"
+            android:text="@string/only_dc"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swc_dc_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_1"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_sub"
+            android:layout_toRightOf="@id/tv_2"
+            android:minHeight="@dimen/filter_item"/>
+
+        <!-- 快充 -->
+        <TextView
+            android:id="@+id/tv_3"
+            style="@style/tv_filter"
+            android:layout_below="@id/tv_2"
+            android:text="@string/only_ac"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swc_ac_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_2"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_sub"
+            android:layout_toRightOf="@id/tv_3"
+            android:minHeight="@dimen/filter_item"/>
+
+        <!-- 全部 -->
+        <TextView
+            android:id="@+id/tv_4"
+            style="@style/tv_filter"
+            android:layout_below="@id/tv_3"
+            android:text="@string/only_all"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swc_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_3"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_sub"
+            android:layout_toRightOf="@id/tv_4"
+            android:checked="true"
+            android:minHeight="@dimen/filter_item"/>
+    </RelativeLayout>
+</FrameLayout>

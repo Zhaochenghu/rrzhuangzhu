@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_mime_top"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/mime_ibtn_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:background="#00000000"
+                android:src="@drawable/ic_setting"/>
+            <ImageButton
+                android:id="@+id/mime_ibtn_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:background="#00000000"
+                android:src="@drawable/ic_message"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/mime_ibtn_photo"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="30dp"
+                android:background="#00000000"
+                android:src="@drawable/ic_photo_default"/>
+
+            <TextView
+                android:id="@+id/mime_tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="@string/log_or_reg"
+                android:textColor="@color/lv_white"
+                android:textSize="@dimen/ts_lel_one"/>
+
+            <TextView
+                android:id="@+id/mime_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="@string/log_or_reg"
+                android:textColor="@color/lv_white"
+                android:textSize="@dimen/ts_lel_one"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/lv_white"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/mime_ll_money"
+            style="@style/Mime_LinearLayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_money2"/>
+            <TextView
+                style="@style/Mime_TextView_Pri"
+                android:text="@string/money"/>
+        </LinearLayout>
+
+        <ImageView style="@style/Mime_Vertical_line"
+                   android:layout_height="60dp"
+                   android:layout_gravity="bottom"/>
+
+        <LinearLayout
+            android:id="@+id/mime_ll_collection"
+            style="@style/Mime_LinearLayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_collection"/>
+            <TextView
+                style="@style/Mime_TextView_Pri"
+                android:text="@string/collection"/>
+        </LinearLayout>
+
+        <ImageView
+            style="@style/Mime_Vertical_line"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"/>
+
+        <LinearLayout
+            android:id="@+id/mime_ll_card"
+            style="@style/Mime_LinearLayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_card"/>
+            <TextView
+                style="@style/Mime_TextView_Pri"
+                android:text="@string/card"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        style="@style/Mime_Horizontal_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lv_white"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/mime_ll_car"
+            style="@style/Mime_LinearLayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_car"/>
+            <TextView
+                style="@style/Mime_TextView_Pri"
+                android:text="@string/car"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="60dp"
+            android:background="@color/lv_bottom_divider"/>
+
+        <LinearLayout
+            android:id="@+id/mime_ll_record"
+            style="@style/Mime_LinearLayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_record"/>
+            <TextView
+                style="@style/Mime_TextView_Pri"
+                android:text="充电记录"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="60dp"
+            android:background="@color/lv_bottom_divider"/>
+
+        <LinearLayout
+            android:id="@+id/mime_ll_about"
+            style="@style/Mime_LinearLayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_about"/>
+            <TextView
+                style="@style/Mime_TextView_Pri"
+                android:text="@string/about"/>
+        </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:id="@+id/mime_ll_pile"-->
+            <!--style="@style/Mime_LinearLayout">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:src="@drawable/ic_pile"/>-->
+            <!--<TextView-->
+                <!--style="@style/Mime_TextView_Pri"-->
+                <!--android:text="@string/build_pile"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/mime_ll_manage"-->
+            <!--style="@style/Mime_LinearLayout">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:src="@drawable/ic_manage"/>-->
+            <!--<TextView-->
+                <!--style="@style/Mime_TextView_Pri"-->
+                <!--android:text="管理"/>-->
+        <!--</LinearLayout>-->
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--style="@style/Mime_Horizontal_line"/>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/lv_white"-->
+        <!--android:orientation="horizontal">-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/mime_ll_record"-->
+            <!--style="@style/Mime_LinearLayout">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:src="@drawable/ic_record"/>-->
+            <!--<TextView-->
+                <!--style="@style/Mime_TextView_Pri"-->
+                <!--android:text="充电记录"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="@color/lv_bottom_divider"/>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/mime_ll_bill"-->
+            <!--style="@style/Mime_LinearLayout">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:src="@drawable/ic_bill"/>-->
+            <!--<TextView-->
+                <!--style="@style/Mime_TextView_Pri"-->
+                <!--android:text="发票"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="@color/lv_bottom_divider"/>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/mime_ll_about"-->
+            <!--style="@style/Mime_LinearLayout">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:src="@drawable/ic_about"/>-->
+            <!--<TextView-->
+                <!--style="@style/Mime_TextView_Pri"-->
+                <!--android:text="@string/about"/>-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <!-- 测试用 -->
+</LinearLayout>

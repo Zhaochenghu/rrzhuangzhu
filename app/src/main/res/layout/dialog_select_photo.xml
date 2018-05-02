@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp">
+    <TextView
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/select_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/from_gallery"
+        android:textSize="@dimen/ts_lel_two"/>
+    <ImageView
+        style="@style/Mime_Horizontal_line" />
+    <TextView
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/select_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/from_camera"
+        android:textSize="@dimen/ts_lel_two"/>
+
+
+</LinearLayout>

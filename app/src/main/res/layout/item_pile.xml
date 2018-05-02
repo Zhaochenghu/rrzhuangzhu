@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lv_white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/short_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/ic_pile96"
+            android:padding="10dp"
+            android:textSize="@dimen/ts_lel_two"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="编 号"
+                    android:textColor="@color/secondary_text_black"
+                    android:textSize="@dimen/ts_lel_three"/>
+                <TextView
+                    android:id="@+id/long_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/primary_text_black"
+                    android:textSize="@dimen/ts_lel_three"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="类 型"
+                            android:textColor="@color/secondary_text_black"
+                            android:textSize="@dimen/ts_lel_three"/>
+                        <TextView
+                            android:id="@+id/pile_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="直流"
+                            android:textColor="@color/primary_text_black"
+                            android:textSize="@dimen/ts_lel_three"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="功 率"
+                            android:textColor="@color/secondary_text_black"
+                            android:textSize="@dimen/ts_lel_three"/>
+                        <TextView
+                            android:id="@+id/pile_power"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/primary_text_black"
+                            android:textSize="@dimen/ts_lel_three"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="状 态"
+                            android:textColor="@color/secondary_text_black"
+                            android:textSize="@dimen/ts_lel_three"/>
+                        <TextView
+                            android:id="@+id/pile_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/primary_text_black"
+                            android:textSize="@dimen/ts_lel_three"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_min"
+                    android:layout_marginLeft="14dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tv_gun1"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_flow_selector"
+                        android:text=" 枪1 "
+                        android:drawablePadding="1dp"
+                        android:drawableLeft="@drawable/state_working"/>
+                    <TextView
+                        android:id="@+id/tv_gun2"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_flow_selector"
+                        android:text=" 枪2 "
+                        android:drawablePadding="1dp"
+                        android:drawableLeft="@drawable/state_working"/>
+                </LinearLayout>
+
+                <!-- 显示枪口 -->
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--大于两个充电枪时在下面显示-->
+    <GridLayout
+        android:id="@+id/pile_grid"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:visibility="gone">
+
+    </GridLayout>
+</LinearLayout>

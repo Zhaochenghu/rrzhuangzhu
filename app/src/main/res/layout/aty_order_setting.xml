@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_header" />
+
+  <include layout="@layout/view_pile_info" />
+
+  <!--无预约-->
+  <LinearLayout
+    android:id="@+id/ll_order"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+    <LinearLayout
+      android:layout_marginTop="10dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/lv_white">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预约模式"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/secondary_text_black"
+        android:textSize="@dimen/ts_lel_two"/>
+      <TextView
+        android:id="@+id/tv_mode"
+        style="@style/Custom_TextView_First"
+        android:text="预约充电" />
+    </LinearLayout>
+
+    <View style="@style/Mime_Horizontal_line" />
+
+    <!--时长-->
+    <RelativeLayout
+      android:id="@+id/rl_duration"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/lv_white"
+      android:padding="10dp"
+      android:visibility="visible">
+      <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="预约时长(分钟)"
+        android:textColor="@color/secondary_text_black"
+        android:textSize="@dimen/ts_lel_two"/>
+
+      <EditText
+        android:id="@+id/et_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/tv_type"
+        android:background="@drawable/btn_red_stroke"
+        android:gravity="center_vertical"
+        android:hint="输入时间,至少5分钟"
+        android:inputType="number"
+        android:maxLength="6"
+        android:maxLines="1"
+        android:minHeight="40dp"
+        android:paddingLeft="16dp"
+        android:textColor="@color/primary_text_black"
+        android:textSize="@dimen/ts_lel_two"/>
+    </RelativeLayout>
+
+    <!--时间-->
+    <LinearLayout
+      android:id="@+id/ll_time"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/white"
+        android:visibility="gone">
+      <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择时间"
+        android:drawableRight="@drawable/ic_right"
+        android:padding="10dp"
+        android:layout_marginRight="5dp"
+        android:textSize="@dimen/ts_lel_two"/>
+      <View style="@style/Mime_Horizontal_line" />
+      <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lv_white"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="@dimen/ts_lel_two"
+        android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_prompt"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/ic_prompt"
+        android:textColor="@color/red"
+        android:text="预约充电"/>
+
+    <Space
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+
+    <Button
+      android:id="@+id/btn_start_order"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="1dp"
+      android:background="@drawable/btn_red_color_selector"
+      android:enabled="false"
+      android:text="立即预约"
+      android:textColor="@color/primary_text_white"
+      android:textSize="@dimen/ts_lel_one"
+      android:visibility="visible" />
+  </LinearLayout>
+
+  <!--有预约-->
+  <LinearLayout
+    android:id="@+id/ll_exist"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+    <TextView
+      android:id="@+id/tv_pattern"
+      android:background="@color/white"
+      android:padding="10dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="@dimen/ts_lel_two"
+      android:textColor="@color/primary_text_black"
+      android:text="预约充电"/>
+
+    <View style="@style/Mime_Horizontal_line" />
+    <TextView
+      android:id="@+id/tv_surplus_duration"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/lv_white"
+      android:gravity="center"
+      android:text="剩余时长：17:43"
+      android:padding="10dp"
+      android:textSize="@dimen/ts_lel_two"
+      android:textColor="@color/colorPrimary" />
+    <LinearLayout
+      android:id="@+id/ll_surplus_time"
+      android:padding="10dp"
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/white">
+      <TextView
+        android:id="@+id/tv_start_time"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始时间\n17:53"
+        android:gravity="center"
+        android:textSize="@dimen/ts_lel_two"
+        android:textColor="@color/colorPrimary"/>
+      <View
+        style="@style/Mime_Vertical_line"/>
+      <TextView
+        android:id="@+id/tv_surplus_time"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="剩余时间\n17:53"
+        android:textSize="@dimen/ts_lel_two"
+        android:textColor="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <Space
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+    <Button
+      android:id="@+id/btn_cancel"
+      style="@style/red_btn"
+      android:layout_marginLeft="0dp"
+      android:layout_marginRight="0dp"
+      android:layout_marginBottom="1dp"
+      android:text="取消预约" />
+  </LinearLayout>
+
+</LinearLayout>

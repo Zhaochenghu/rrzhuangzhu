@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.renren0351.rrzzapp.custom.DrawableCenterTextView
+        android:id="@+id/grid_bt_keys"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gride_bt_selector"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="25sp" />
+</LinearLayout>

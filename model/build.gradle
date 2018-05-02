@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
+    }
+}
+apply plugin: 'org.greenrobot.greendao'
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'org.robolectric:robolectric:3.1.4'
+    testCompile 'junit:junit:4.12'
+    // local
+    compile project(':baseframe')
+    compile project(':annotations')
+    annotationProcessor project(':compiler')
+    // google
+    compile deps.supportAppcompatv7
+    // third
+    // 这个编译库在用的地方都需要引用
+    annotationProcessor deps.daggerCompiler
+    compile deps.greendao
+    compile files('libs/protobuf-java-3.1.0.jar')
+}
+
+greendao {
+    schemaVersion 1
+}

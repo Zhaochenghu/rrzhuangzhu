@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/common_header"/>
+
+    <TextView
+        android:id="@+id/setting_nick"
+        style="@style/Custom_TextView_First"
+        android:text="@string/change_nick"/>
+
+    <TextView
+        android:id="@+id/setting_psd"
+        android:layout_marginTop="10dp"
+        style="@style/Custom_TextView_First"
+        android:text="@string/change_psd"/>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/setting_bt_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_red_color_selector"
+        android:text="@string/exit"
+        android:textColor="@color/primary_text_white"
+        android:textSize="@dimen/ts_lel_two"/>
+
+</LinearLayout>

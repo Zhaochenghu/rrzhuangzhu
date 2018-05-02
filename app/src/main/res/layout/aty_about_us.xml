@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/line1"
+        layout="@layout/common_header"/>
+    <ImageView
+        android:id="@+id/line2"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_rrzhuangzhu"
+        android:layout_below="@id/line1"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/line3"
+        android:layout_below="@id/line2"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="人 人 桩 主"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/primary_text_black"
+        android:textSize="@dimen/ts_lel_two"/>
+    <com.renren0351.rrzzapp.custom.JustifyTextView
+        android:layout_below="@id/line3"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/ts_lel_three"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/app_introduce"/>
+    <LinearLayout
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="国晶售电有限公司"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/primary_text_black"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="0351-837-1089"
+            android:textStyle="italic"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="© 2016 国晶售电有限公司 版权所有" />
+    </LinearLayout>
+
+</RelativeLayout>

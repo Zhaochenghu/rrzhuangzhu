@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/common_header"/>
+
+    <include
+        android:id="@+id/net_exception"
+        layout="@layout/common_net_exception"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/ll_exit"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/view_pile_info"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/ll_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lv_white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="充电模式"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_two"/>
+            <TextView
+                android:id="@+id/tv_mode"
+                style="@style/Custom_TextView_First"
+                android:text="按金额充电" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_way"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lv_white"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="充电金额(元)"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_two"/>
+
+            <EditText
+                android:id="@+id/et_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/tv_type"
+                android:background="@drawable/btn_red_stroke"
+                android:gravity="center_vertical"
+                android:hint="输入充电金额"
+                android:inputType="number"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:minHeight="40dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/primary_text_black"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+        <View
+            style="@style/Mime_Horizontal_line"/>
+        <RelativeLayout
+            android:id="@+id/rl_pay_way"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lv_white">
+
+            <TextView
+                android:id="@+id/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支付方式"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="@dimen/ts_lel_two"/>
+
+            <TextView
+                android:id="@+id/pay_way"
+                style="@style/Custom_TextView_First"
+                android:layout_toRightOf="@id/pay"
+                android:text="账户余额" />
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_start_charge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_red_color_selector"
+            android:text="立即充电"
+            android:textColor="@color/primary_text_white"
+            android:layout_marginBottom="1dp"
+            android:textSize="@dimen/ts_lel_one"/>
+    </LinearLayout>
+</LinearLayout>

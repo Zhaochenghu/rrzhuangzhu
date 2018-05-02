@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            debuggable false
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile deps.junit
+    // auto parcel
+//    provided project(':annotations')
+//    annotationProcessor project(':compiler')
+    // third part
+    //google libs
+    compile deps.supportAppcompatv7
+//    compile deps.supportDesign
+    compile deps.supportRecyclerview
+//    compile 'com.android.support:percent:'.plus(rootProject.supportLibraryVersion)
+    //for debug
+    compile 'com.facebook.stetho:stetho:' + rootProject.stethoVersion
+    compile 'com.facebook.stetho:stetho-okhttp3:' + rootProject.stethoVersion
+    // retorfit
+    compile 'com.squareup.retrofit2:retrofit:' + rootProject.retrofit2Version
+    compile 'com.squareup.retrofit2:converter-gson:' + rootProject.retrofit2Version
+    compile deps.adapterRxjava
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    // rxjava rxandroid
+    compile deps.rxandroid
+    compile deps.rxjava
+    // Glide
+    compile 'com.github.bumptech.glide:glide:' + rootProject.glideVersion
+    // dagger2
+    compile 'com.google.dagger:dagger:' + rootProject.daggerVersion
+    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.daggerVersion
+    // butterknife
+    compile 'com.jakewharton:butterknife:' + rootProject.butterknifeVersion
+    annotationProcessor 'com.jakewharton:butterknife-compiler:' + rootProject.butterknifeVersion
+    // 内存泄露检测工具
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:' + rootProject.leakcanaryVersion
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + rootProject.leakcanaryVersion
+    //app升级
+    compile 'com.qianwen:update-app:3.3.8'
+    compile 'com.lzy.net:okgo:3.0.4'
+    
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + rootProject.leakcanaryVersion
+    compile deps.materialEdittext
+}

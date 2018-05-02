@@ -1,0 +1,8 @@
+package com.renren0351.model.request;
+
+/********************************
+ * Created by lvshicheng on 16/8/10.
+ ********************************/
+public class SimpleRequest {
+
+}

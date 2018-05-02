@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/common_header"/>
+    <TextView
+        android:id="@+id/tv_no"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="您还没有充电记录哦"
+        android:textColor="@color/primary_text_black"
+        android:textSize="@dimen/ts_lel_one"
+        android:visibility="gone"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lv_bg_gray"
+        android:clipToPadding="false">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
