@@ -213,8 +213,8 @@ public class PileListActivity extends LvBaseAppCompatActivity implements Station
 								String url = "https://www.pgyer.com/Buca";
 
 								UMWeb web = new UMWeb(url);
-								web.setTitle("欢迎使用杰电APP");
-								web.setDescription("绿色,节能,低碳,畅享健康生活，北京双杰电动汽车充电桩欢迎您!");
+								web.setTitle("欢迎使用人人桩主APP");
+								web.setDescription("绿色,节能,低碳,畅享健康生活，国晶售电有限公司欢迎您!");
 								web.setThumb(new UMImage(PileListActivity.this, R.mipmap.ic_launcher));
 								new ShareAction(PileListActivity.this).withMedia(web)
 										.setPlatform(share_media)
