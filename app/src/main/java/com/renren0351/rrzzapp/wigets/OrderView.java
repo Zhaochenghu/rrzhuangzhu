@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 
 /********************************
  * Created by lvshicheng on 2017/2/21.
+ * modify by 赵成虎 on 2018/5/4
  ********************************/
 public class OrderView extends FrameLayout {
 
@@ -84,7 +85,7 @@ public class OrderView extends FrameLayout {
   public void refreshData(final SubstationBean substationBean) {
 
     this.substationBean = substationBean;
-    tvName.setText(substationBean.name);
+    tvName.setText(substationBean.areaName);
     tvDistance.setText(substationBean.distance);
 
     tvAc.setVisibility(substationBean.hasTotalAC > 0 ? View.VISIBLE : View.GONE);

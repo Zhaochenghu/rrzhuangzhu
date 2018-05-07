@@ -261,7 +261,7 @@ public class SearchFragment extends LvBaseFragment {
       favorCase = new FavorCase();
     }
     showLoadingDialog();
-    favorCase.params(bean.substationId)
+    favorCase.params(bean.areaId)
         .createObservable(new SimpleSubscriber<SimpleResponse>() {
           @Override
           public void onError(Throwable e) {
@@ -292,7 +292,7 @@ public class SearchFragment extends LvBaseFragment {
       unFavorCase = new UnFavorCase();
     }
     showLoadingDialog();
-    unFavorCase.params(bean.substationId)
+    unFavorCase.params(bean.areaId)
         .createObservable(new SimpleSubscriber<SimpleResponse>() {
           @Override
           public void onError(Throwable e) {

@@ -252,7 +252,7 @@ public class CollectionActivity extends LvBaseAppCompatActivity implements Colle
       unFavorCase = new UnFavorCase();
     }
     showLoadingDialog();
-    unFavorCase.params(bean.substationId)
+    unFavorCase.params(bean.areaId)
         .createObservable(new SimpleSubscriber<SimpleResponse>() {
           @Override
           public void onError(Throwable e) {

@@ -79,7 +79,7 @@ public class LvRepository {
         .filter(new Func1<SubstationBean, Boolean>() {
           @Override
           public Boolean call(SubstationBean substationBean) {
-            return substationBean.name.contains(searchName);
+            return substationBean.areaName.contains(searchName);
           }
         })
         .toList()
@@ -91,7 +91,7 @@ public class LvRepository {
             .filter(new Func1<SubstationBean, Boolean>() {
               @Override
               public Boolean call(SubstationBean substationBean) {
-                if (substationBean.substationId.equals(id)){
+                if (substationBean.areaId.equals(id)){
                   return true;
                 }else {
                   return false;
