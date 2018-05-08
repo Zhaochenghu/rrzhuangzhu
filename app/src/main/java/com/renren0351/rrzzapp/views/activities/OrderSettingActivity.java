@@ -219,7 +219,7 @@ public class OrderSettingActivity extends LvBaseAppCompatActivity implements App
 						if (stationInfoResponse.isSuccess()) {
 							StationInfoBean bean = stationInfoResponse.stationInfo;
 							if (bean != null) {
-								stationName = bean.substationName;
+								stationName = bean.areaName;
 								subName.setText(stationName);
 								pileType.setText(bean.getCpType());
 								pilePower.setText(bean.ratedPower);

@@ -36,6 +36,7 @@ public class StationInfoBean implements Serializable{
   public String  updateTime;
   public String  pistate;
   public String  substationName;
+  public String  areaName;
   public String  name;
   public String  cpId;
   public String  latitude;
@@ -45,7 +46,8 @@ public class StationInfoBean implements Serializable{
   public String  cpType;
   public String  remark;
   public String  longitude;
-  public String  substationId;
+  //public String  substationId;
+  public String  areaId;
   public String  port;
   public String  s_id;
   public boolean disable;
