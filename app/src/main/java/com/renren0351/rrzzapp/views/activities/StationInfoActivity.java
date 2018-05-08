@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -55,6 +56,7 @@ import rx.functions.Action1;
 
 /********************************
  * Created by lvshicheng on 2017/4/19.
+ * modify by 赵成虎 on 2018/5/4
  ********************************/
 @Route(path = "/login/charging/station")
 public class StationInfoActivity extends LvBaseAppCompatActivity implements StationInfoContract.View,
@@ -192,7 +194,7 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
     @OnClick(R.id.ll_free)
     public void clickFee() {
         if (mStationInfoBean != null) {
-            FeeActivity.navigation(mStationInfoBean.substationId, mStationInfoBean.substationName);
+            FeeActivity.navigation(mStationInfoBean.areaId, mStationInfoBean.areaName);
         }
 
     }
@@ -246,7 +248,7 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
     public void startChargingSuccess() {
         ServiceUtil.startChargingQuery();
         AppInfosPreferences.get().setCharging("1");
-        AppInfosPreferences.get().setChargeStationName(mStationInfoBean.substationName);
+        AppInfosPreferences.get().setChargeStationName(mStationInfoBean.areaName);
         RxBus.getInstance().postEvent(new FinishActivityEvent());
         finish();
     }
@@ -257,8 +259,8 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
     }
 
     private void refreshDisplay() {
-        feePresenter.queryFees(mStationInfoBean.substationId);
-        subName.setText(mStationInfoBean.substationName);
+        feePresenter.queryFees(mStationInfoBean.areaId);
+        subName.setText(mStationInfoBean.areaName);
         pileCode.setText(mStationInfoBean.cpId);
         pileType.setText(mStationInfoBean.getCpType());
         tvPower.setText(mStationInfoBean.ratedPower);
@@ -303,9 +305,10 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.tv_one:
-                    currentMode = MODE_AUTO;
+                    /*currentMode = MODE_AUTO;
                     tvMode.setText(strMode[0]);
-                    rlWay.setVisibility(View.GONE);
+                    rlWay.setVisibility(View.GONE);*/
+                    Toast.makeText(StationInfoActivity.this,"交流桩只能按金额充电",Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.tv_two:
                     currentMode = MODE_MONEY;
@@ -316,19 +319,22 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
                     etNum.setHint("输入金额,至少为10元");
                     break;
                 case R.id.tv_three:
-                    currentMode = MODE_TIME;
+                   /* currentMode = MODE_TIME;
                     tvMode.setText(strMode[2]);
                     rlWay.setVisibility(View.VISIBLE);
                     etNum.setText("");
                     tvType.setText("充电时间(分钟)");
-                    etNum.setHint("输入时间，至少为10分钟");
+                    etNum.setHint("输入时间，至少为10分钟");*/
+                    Toast.makeText(StationInfoActivity.this,"交流桩只能按金额充电",Toast.LENGTH_SHORT).show();
+
                     break;
                 case R.id.tv_four:
-                  currentMode = MODE_POWER;
+                  /*currentMode = MODE_POWER;
                   tvMode.setText(strMode[3]);
                   rlWay.setVisibility(View.VISIBLE);
                   tvType.setText("充电电量(KWh)");
-                  etNum.setHint("输入电量,至少为10度");
+                  etNum.setHint("输入电量,至少为10度");*/
+                    Toast.makeText(StationInfoActivity.this,"交流桩只能按金额充电",Toast.LENGTH_SHORT).show();
                   break;
                 case R.id.tv_cancel:
                     break;
@@ -359,7 +365,7 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
 
         request.chargingMode = "0" + currentMode;
         request.command = "0";
-        request.substationId = this.mStationInfoBean.substationId;
+        request.areaId = this.mStationInfoBean.areaId;
         request.cpId = this.mStationInfoBean.cpId;
         request.cpinterfaceId = gunId;
         //开始充电
@@ -394,7 +400,7 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
     private void showMsg(String res) {
         switch (res){
             case "1":
-                showToast("没有查找到子站编号");
+                showToast("没有查找到区站编号");
                 break;
             case "2":
                 showToast("没有查找到充电桩编号");
