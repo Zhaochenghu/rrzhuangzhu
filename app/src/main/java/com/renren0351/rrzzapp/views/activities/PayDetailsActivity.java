@@ -75,22 +75,43 @@ public class PayDetailsActivity extends LvBaseAppCompatActivity {
 
   private void inflateData() {
     ChargeRecordBean bean = getIntent().getParcelableExtra(ChargeRecordBean.class.getSimpleName());
-    tvStartTime.setText(bean.startTime);
-    tvStopTime.setText(bean.endTime);
-    tvSumTime.setText(LvTimeUtil.transStampToHMS(LvAppUtils.calculateDiffDate(bean.startTime, bean.endTime)));
-    tvSumPower.setText(String.format("%.1f度", bean.getTotalElectric()));
-    tvElectricFee.setText(String.format("%.2f元", bean.getElecFees())); // 电费
-    tvServiceFee.setText(String.format("%.2f元", bean.getServiceFees()));  // 服务费
-    tvParkFee.setText("无");
+    if (bean.areaName.equals("")) {
 
-    tvOrderCode.setText(bean.batch);
-    tvStationName.setText(bean.substationName);
-    tvPileCode.setText(bean.cpId);
-    tvSumBalance.setText(String.format("%.2f元", bean.getTransamount()));
-    tvPayType.setText(bean.getPayType());
-    if (bean.transType == 0){
-      llPayCardId.setVisibility(View.VISIBLE);
-      tvPayCardId.setText(bean.cardId);
+      tvStartTime.setText(bean.startTime);
+      tvStopTime.setText(bean.endTime);
+      tvSumTime.setText(LvTimeUtil.transStampToHMS(LvAppUtils.calculateDiffDate(bean.startTime, bean.endTime)));
+      tvSumPower.setText(String.format("%.1f度", bean.getTotalElectric()));
+      tvElectricFee.setText(String.format("%.2f元", bean.getElecFees())); // 电费
+      tvServiceFee.setText(String.format("%.2f元", bean.getServiceFees()));  // 服务费
+      tvParkFee.setText("无");
+
+      tvOrderCode.setText(bean.batch);
+      tvStationName.setText(bean.substationName);
+      tvPileCode.setText(bean.cpId);
+      tvSumBalance.setText(String.format("%.2f元", bean.getTransamount()));
+      tvPayType.setText(bean.getPayType());
+      if (bean.transType == 0) {
+        llPayCardId.setVisibility(View.VISIBLE);
+        tvPayCardId.setText(bean.cardId);
+      }
+    } else {
+      tvStartTime.setText(bean.startTime);
+      tvStopTime.setText(bean.endTime);
+      tvSumTime.setText(LvTimeUtil.transStampToHMS(LvAppUtils.calculateDiffDate(bean.startTime, bean.endTime)));
+      tvSumPower.setText(String.format("%.1f度", bean.getTotalElectric()));
+      tvElectricFee.setText(String.format("%.2f元", bean.getElecFees())); // 电费
+      tvServiceFee.setText(String.format("%.2f元", bean.getServiceFees()));  // 服务费
+      tvParkFee.setText("无");
+
+      tvOrderCode.setText(bean.batch);
+      tvStationName.setText(bean.areaName);
+      tvPileCode.setText(bean.cpId);
+      tvSumBalance.setText(String.format("%.2f元", bean.getTransamount()));
+      tvPayType.setText(bean.getPayType());
+      if (bean.transType == 0) {
+        llPayCardId.setVisibility(View.VISIBLE);
+        tvPayCardId.setText(bean.cardId);
+      }
     }
   }
 }

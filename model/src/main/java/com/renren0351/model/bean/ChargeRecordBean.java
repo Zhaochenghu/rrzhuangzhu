@@ -44,6 +44,7 @@ public class ChargeRecordBean implements Parcelable {
     */
   public String cpinterfaceId;
   public String substationName;
+  public String areaName;
   public String username;
   public String updateTime;
   public String userId;
@@ -161,6 +162,7 @@ public class ChargeRecordBean implements Parcelable {
     dest.writeString(this.endTime);
     dest.writeString(this.adbalance);
     dest.writeString(this.telecode);
+    dest.writeString(this.areaName);
     dest.writeString(this.substationName);
     dest.writeInt(this.transType);
     dest.writeString(this.elecFees);
@@ -201,6 +203,7 @@ public class ChargeRecordBean implements Parcelable {
     this.endTime = in.readString();
     this.adbalance = in.readString();
     this.telecode = in.readString();
+    this.areaName = in.readString();
     this.substationName = in.readString();
     this.transType = in.readInt();
     this.elecFees = in.readString();

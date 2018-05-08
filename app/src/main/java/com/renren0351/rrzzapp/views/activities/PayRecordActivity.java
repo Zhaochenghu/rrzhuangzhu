@@ -216,24 +216,49 @@ public class PayRecordActivity extends LvBaseAppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             ChargeRecordBean bean = dataList.get(position);
-            holder.tvName.setText(bean.substationName);
-            holder.tvCode.setText(String.format("%s：%s", batchName,bean.batch));
+            if (bean.areaName.equals("")) {
 
-            if (!LvTextUtil.isEmpty(bean.transtime)){
-                holder.tvDate.setText(String.format("充电日期：%s", bean.transtime));
-            }else {
-                holder.tvDate.setText(String.format("充电日期：%s", bean.startTime));
+//                holder.tvName.setText(bean.areaName);
+                holder.tvName.setText(bean.substationName);
+                holder.tvCode.setText(String.format("%s：%s", batchName, bean.batch));
+
+                if (!LvTextUtil.isEmpty(bean.transtime)) {
+                    holder.tvDate.setText(String.format("充电日期：%s", bean.transtime));
+                } else {
+                    holder.tvDate.setText(String.format("充电日期：%s", bean.startTime));
+                }
+
+                holder.tvType.setText(String.format("支付方式：%s", bean.getPayType()));
+                if (bean.transType == 0) {
+                    holder.tvCardId.setVisibility(View.VISIBLE);
+                    holder.tvCardId.setText(String.format("支付卡号：%s", bean.cardId));
+                } else {
+                    holder.tvCardId.setVisibility(View.GONE);
+                }
+
+                holder.tvMoney.setText(String.format("-%.2f", bean.getTransamount()));
+            } else {
+
+                holder.tvName.setText(bean.areaName);
+//            holder.tvName.setText(bean.substationName);
+                holder.tvCode.setText(String.format("%s：%s", batchName,bean.batch));
+
+                if (!LvTextUtil.isEmpty(bean.transtime)){
+                    holder.tvDate.setText(String.format("充电日期：%s", bean.transtime));
+                }else {
+                    holder.tvDate.setText(String.format("充电日期：%s", bean.startTime));
+                }
+
+                holder.tvType.setText(String.format("支付方式：%s", bean.getPayType()));
+                if (bean.transType == 0){
+                    holder.tvCardId.setVisibility(View.VISIBLE);
+                    holder.tvCardId.setText(String.format("支付卡号：%s", bean.cardId));
+                }else {
+                    holder.tvCardId.setVisibility(View.GONE);
+                }
+
+                holder.tvMoney.setText(String.format("-%.2f", bean.getTransamount()));
             }
-
-            holder.tvType.setText(String.format("支付方式：%s", bean.getPayType()));
-            if (bean.transType == 0){
-                holder.tvCardId.setVisibility(View.VISIBLE);
-                holder.tvCardId.setText(String.format("支付卡号：%s", bean.cardId));
-            }else {
-                holder.tvCardId.setVisibility(View.GONE);
-            }
-
-            holder.tvMoney.setText(String.format("-%.2f", bean.getTransamount()));
             holder.llRoot.setTag(bean);
             holder.llRoot.setOnClickListener(new View.OnClickListener() {
                 @Override
