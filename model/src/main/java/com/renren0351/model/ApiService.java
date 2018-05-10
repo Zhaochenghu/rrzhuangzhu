@@ -9,7 +9,9 @@ import com.renren0351.model.request.LoginRequest;
 import com.renren0351.model.request.PayPwdRequest;
 import com.renren0351.model.request.RechargeRequest;
 import com.renren0351.model.request.RegisterRequest;
+import com.renren0351.model.request.SimpleRequest;
 import com.renren0351.model.request.StartChargingRequest;
+import com.renren0351.model.request.StopRequest;
 import com.renren0351.model.response.AppointmentResponse;
 import com.renren0351.model.response.CarResponse;
 import com.renren0351.model.response.CardListResponse;
@@ -382,4 +384,10 @@ public interface ApiService {
 
     @POST("v1/my/header/update")
     Observable<SimpleResponse> updateHeaderImg(@Body HashMap<String, String> request);
+
+    /**
+     * 强制停止充电、删除当前充电记录
+     */
+    @POST("v1/chargingcmd/delete")
+    Observable<SimpleRequest> deleteChanging(@Body StopRequest request);
 }
