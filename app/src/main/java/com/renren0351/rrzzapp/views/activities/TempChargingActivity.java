@@ -185,8 +185,9 @@ public class TempChargingActivity extends LvBaseAppCompatActivity {
 		tvChargingPay.setText(String.format("%.2f 元", fee / 100)); // 充电费用
 		tvChargingV.setText(String.format("%d V", outV / 10)); // 充电电压
 		tvChargingA.setText(String.format("%d A", outA / 10)); // 充电电流
-		tvChargingP.setText(stationStatus.getPower()); // 充电功率
-	}
+		//tvChargingP.setText(stationStatus.getPower()); // 充电功率
+		tvChargingP.setText(String.format("%d W", outV / 10 * outA / 10 ));
+    }
 
 	@Override
 	protected void onDestroy() {

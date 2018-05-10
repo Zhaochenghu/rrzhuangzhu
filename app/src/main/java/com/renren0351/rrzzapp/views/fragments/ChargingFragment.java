@@ -273,7 +273,8 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 
 		tvChargingV.setText(String.format("%d V", outV / 10)); // 充电电压
 		tvChargingA.setText(String.format("%d A", outA / 10)); // 充电电流
-		tvChargingP.setText(stationStatus.getPower()); // 充电功率
+		//tvChargingP.setText(stationStatus.getPower()); // 充电功率
+		tvChargingP.setText(String.format("%d W", outV / 10 * outA / 10 ));
 	}
 
 	/**
