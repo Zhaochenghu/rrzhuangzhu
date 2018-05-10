@@ -3,6 +3,7 @@ package com.renren0351.rrzzapp.views.activities;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,8 +38,11 @@ import com.renren0351.presenter.fee.FeePresenter;
 import com.renren0351.presenter.station.StationInfoContract;
 import com.renren0351.presenter.station.StationInfoPresenter;
 import com.renren0351.presenter.usercase.MyWalletCase;
+import com.renren0351.rrzzapp.views.dialog.NiftyDialogBuilder;
+import com.renren0351.rrzzapp.views.dialog.loaddialog.LoadingDialog;
 import com.trello.rxlifecycle.ActivityEvent;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -53,6 +57,9 @@ import cn.com.leanvision.baseframe.util.LvTextUtil;
 import rx.Observable;
 import rx.Subscription;
 import rx.functions.Action1;
+
+import static com.renren0351.rrzzapp.LvApplication.getContext;
+import static com.umeng.socialize.net.utils.AesHelper.newString;
 
 /********************************
  * Created by lvshicheng on 2017/4/19.
@@ -229,9 +236,23 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
                     }
                 }, 2000);
 
+            } else if (msg.contains("您当前有未完成的启动充电，请先停止充电或者取消预约！")) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        StopdialogActivity.navigation();
+                    }
+                },1000);
             }
 
         }
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("main", "test ..........................");
     }
 
     @Override
@@ -255,9 +276,10 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
 
     @Override
     public void startChargingFailed(String msg) {
+        //您当前有未完成的启动充电，请先停止充电或者取消预约！
+        //充电枪已经被别人占用！
         requestFailed(msg);
     }
-
     private void refreshDisplay() {
         feePresenter.queryFees(mStationInfoBean.areaId);
         subName.setText(mStationInfoBean.areaName);
@@ -371,7 +393,6 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
         //开始充电
         presenter.startCharging(request);
     }
-
     @Override
     public void callBack(ChargingResponse.Charging charging) {
         DebugLog.log("-------------------------------->" + charging.res);
