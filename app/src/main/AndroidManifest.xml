@@ -73,6 +73,7 @@
         <activity android:name="com.renren0351.rrzzapp.views.activities.CardActivity"/>
         <activity android:name="com.renren0351.rrzzapp.views.activities.MessageActivity"/>
         <activity android:name="com.renren0351.rrzzapp.views.activities.MoneyActivity"/>
+        <activity android:name="com.renren0351.rrzzapp.views.activities.StopdialogActivity"/>
         <activity android:name="com.renren0351.rrzzapp.views.activities.PileActivity"/>
         <activity android:name="com.renren0351.rrzzapp.views.activities.SettingActivity"/>
         <activity android:name="com.renren0351.rrzzapp.views.activities.ScanActivity"/>
