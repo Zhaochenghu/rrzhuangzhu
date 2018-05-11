@@ -91,7 +91,7 @@ public class StationInfoPresenter implements StationInfoContract.Presenter<Stati
               if (response.isSuccess()) {
                 getView().callBack(response.charging);
               } else {
-                getView().startChargingFailed(response.msg);
+                  getView().startChargingFailed(response.msg);
               }
             }
           }
@@ -105,7 +105,6 @@ public class StationInfoPresenter implements StationInfoContract.Presenter<Stati
             }
         });
   }
-
   @Override
   public boolean isViewActive() {
     return wrView.get() != null;

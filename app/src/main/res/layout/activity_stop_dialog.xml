@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="100dp"
+        android:textColor="@color/bank_bg01"
+        android:textSize="30dp"
+        android:text="您有未完成的启动充电,请先停止充电或者取消预约！" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="100dp"
+        android:textColor="@color/red"
+        android:textSize="20dp"
+        android:text="提示“成功”后返回充电界面重新启动充电桩" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/stop_changing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/red"
+            android:text="强制停止充电"
+            android:textSize="25dp"
+            android:onClick="stopChanging"/>
+    </LinearLayout>
+</LinearLayout>
