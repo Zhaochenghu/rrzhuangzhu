@@ -250,11 +250,14 @@ public class StationDetailActivity extends LvBaseAppCompatActivity implements St
                         default:
                             // FIXME: 2017/7/26 需要修改分享的网址
 //                            String url = "https://mobile.umeng.com/";
-                            String url = "https://www.pgyer.com/Buca";
+                       //     String url = "https://www.pgyer.com/Buca";
+                            String url = "http://117.78.40.137/cs-cloud-demo/loadapp/loadapp.html";
 
                             UMWeb web = new UMWeb(url);
-                            web.setTitle("欢迎使用杰电APP");
-                            web.setDescription("绿色,节能,低碳,畅享健康生活，北京双杰电动汽车充电桩欢迎您!");
+                            /*web.setTitle("欢迎使用杰电APP");
+                            web.setDescription("绿色,节能,低碳,畅享健康生活，北京双杰电动汽车充电桩欢迎您!");*/
+                            web.setTitle("欢迎使用人人桩主APP");
+                            web.setDescription("绿色,节能,低碳,畅享健康生活，国晶售电有限公司欢迎您!");
                             web.setThumb(new UMImage(StationDetailActivity.this, R.mipmap.ic_launcher));
                             new ShareAction(StationDetailActivity.this).withMedia(web)
                                 .setPlatform(share_media)

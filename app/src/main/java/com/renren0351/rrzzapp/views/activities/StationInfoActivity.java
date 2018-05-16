@@ -438,6 +438,8 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
             case "6":
             case "7":
                 showToast("服务器出现错误了");
+            case "8":
+                showToast("服务器出现错误了");
                 break;
         }
     }

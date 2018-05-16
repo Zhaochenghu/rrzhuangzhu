@@ -210,7 +210,7 @@ public class PileListActivity extends LvBaseAppCompatActivity implements Station
 							default:
 								// FIXME: 2017/7/26 需要修改分享的网址
 //                            String url = "https://mobile.umeng.com/";
-								String url = "https://www.pgyer.com/Buca";
+								String url = "http://117.78.40.137/cs-cloud-demo/loadapp/loadapp.html";
 
 								UMWeb web = new UMWeb(url);
 								web.setTitle("欢迎使用人人桩主APP");

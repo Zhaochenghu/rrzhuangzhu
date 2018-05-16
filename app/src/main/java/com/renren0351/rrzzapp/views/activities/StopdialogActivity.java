@@ -19,6 +19,7 @@ import cn.com.leanvision.baseframe.rx.transformers.SchedulersCompat;
 
 /**
  * Created by 赵成虎 on 2018/5/9.
+ * 强制删除当前充电记录
  */
 @Route(path = "/login/stop/changing")
 public class StopdialogActivity extends LvBaseAppCompatActivity {
@@ -39,7 +40,7 @@ public class StopdialogActivity extends LvBaseAppCompatActivity {
 
     public void stopChanging(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        AlertDialog dialog = builder.setTitle("强制停止本次充电")
+        AlertDialog dialog = builder.setTitle("强制删除本次充电")
                 .setMessage("确定要删除本次充电记录吗？")
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override

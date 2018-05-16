@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@color/red"
-            android:text="强制停止充电"
+            android:text="清除当前充电"
             android:textSize="25dp"
             android:onClick="stopChanging"/>
     </LinearLayout>
