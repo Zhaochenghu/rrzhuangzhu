@@ -73,7 +73,7 @@ public interface ApiService {
     /**
      * 忘记密码
      */
-    @POST("/v1/account/password/forget")
+    @POST("v1/account/password/forget")
     Observable<SimpleResponse> forgotPwd(@Body ForgotPwdRequest request);
 
     /**
