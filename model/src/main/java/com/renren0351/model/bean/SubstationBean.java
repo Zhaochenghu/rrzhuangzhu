@@ -7,10 +7,43 @@ import cn.com.leanvision.baseframe.util.LvTextUtil;
 /********************************
  * Created by lvshicheng on 2017/3/8.
  * modify by 赵成虎 on 2018/5/4
+ *
+ * "updateTime": "2018-05-09 14:28:48",
+ "hasTotalDC": 0,
+ "id": 48,
+ "stopFee": "",
+ "chargingFee": "",
+ "hasRestMIX": 0,
+ "hasTotalMIX": 0,
+ "hasTotalAC": 502,
+ "areaLongitude": "112.53",
+ "hasRatedPower": [],
+ "serviceTime": "8：00--22：00",
+ "hasRestAC": 96,
+ "areaId": "002199990001",
+ "hasRest": 96,
+ "companyName": "国晶售电有限公司",
+ "hasRestDC": 0,
+ "hasTotal": 502,
+ "address": "山西太原市",
+ "createTime": "2018-05-04 18:43:20",
+ "areaName": "山西太原市一区",
+ "remark": "",
+ "companyCode": "0021",
+ "serviceCall": "0351-837-1089",
+ "serviceFee": "",
+ "templateId": "",
+ "joinTime": "2018-05-04 18:53:45",
+ "isFavorites": false,
+ "areaLatitude": "37.87"
  ********************************/
 public class SubstationBean {
 
   public transient String distance; // 距离当前位置
+    //新加字段 停车费，服务费，充电费
+    public String stopFee;
+    public String chargingFee;
+    public String serviceFee;
 
   public String updateTime;
  // public String name;
