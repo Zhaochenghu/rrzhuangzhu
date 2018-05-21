@@ -136,7 +136,6 @@
                 android:id="@+id/tv_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_right"
                 android:paddingRight="10dp"
                 android:layout_below="@id/view_divider_1"
                 android:layout_toRightOf="@id/iv_rmb"

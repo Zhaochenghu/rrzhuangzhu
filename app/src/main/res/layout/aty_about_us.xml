@@ -56,7 +56,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="© 2016 北京双杰电气股份有限公司 版权所有" />
+            android:text="© 2016 北京双杰电气股份有限公司 版权所有"
+            android:visibility="gone"/>
     </LinearLayout>
 
 </RelativeLayout>

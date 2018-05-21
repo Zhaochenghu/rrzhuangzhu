@@ -286,7 +286,7 @@ public class OrderListFragment extends LvBaseFragment {
 			final SubstationBean substationBean = substations.get(position);
 //      Log.i("TAG", "onBindViewHolder: " + substationBean.name + " " + substationBean.isFavorites);
 			//加载费用信息，费用信息是实时数据
-			ApiComponentHolder.sApiComponent.apiService()
+			/*ApiComponentHolder.sApiComponent.apiService()
 					.queryFees(substationBean.areaId)
 					.take(1)
 					.compose(SchedulersCompat.<FeeResponse>applyNewSchedulers())
@@ -308,7 +308,15 @@ public class OrderListFragment extends LvBaseFragment {
 //                    ToastUtils.makeText(holder.itemView.getContext(),feeResponse.msg, CustomToast.LENGTH_SHORT).show();
 							}
 						}
-					});
+					});*/
+
+			//电价显示
+			holder.tvE.setText(substationBean.chargingFee);
+			holder.tvE.setSelected(true);
+			holder.tvS.setText(substationBean.serviceFee);
+			holder.tvS.setSelected(true);
+			holder.tvP.setText(substationBean.stopFee);
+			holder.tvP.setSelected(true);
 			//电站名
 			holder.colItemStation.setText(substationBean.areaName);
 			//这里设置是为了实现跑马灯效果
@@ -357,12 +365,12 @@ public class OrderListFragment extends LvBaseFragment {
 			});
 
 			//跳转电价界面
-			holder.llFree.setOnClickListener(new View.OnClickListener() {
+			/*holder.llFree.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					FeeActivity.navigation(substationBean.areaId, substationBean.areaName);
 				}
-			});
+			});*/
 
 			holder.colItemDistance.setTag(position);
 			//导航
