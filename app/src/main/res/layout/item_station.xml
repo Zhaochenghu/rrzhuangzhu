@@ -140,7 +140,7 @@
         android:paddingBottom="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="2dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <LinearLayout
             android:id="@+id/ll_free"
             android:layout_width="match_parent"
@@ -158,24 +158,69 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:orientation="vertical">
-                <TextView
-                    android:id="@+id/tv_electric_fee"
+                <LinearLayout
                     android:layout_marginTop="1dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:id="@+id/tv_service_fee"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="充电费："
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:id="@+id/tv_electric_fee"
+                        android:layout_marginTop="1dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:singleLine="true"/>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_marginTop="1dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:id="@+id/tv_park_fee"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="服务费："
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:id="@+id/tv_service_fee"
+                        android:layout_marginTop="1dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:singleLine="true"/>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_marginTop="1dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="停车费："
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:id="@+id/tv_park_fee"
+                        android:layout_marginTop="1dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:singleLine="true"/>
+                </LinearLayout>
             </LinearLayout>
 
             <!--<TextView-->
@@ -196,6 +241,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
                 android:src="@drawable/ic_pay"
                 android:layout_gravity="center"/>
             <LinearLayout
