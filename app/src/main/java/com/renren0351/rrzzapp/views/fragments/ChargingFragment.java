@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.renren0351.rrzzapp.LvAppUtils;
 import com.renren0351.rrzzapp.R;
@@ -397,6 +398,7 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 						}
 					}
 				});
+		Toast.makeText(getActivity(), "充电完成，请拔枪，否则会影响您下次正常充电", Toast.LENGTH_LONG).show();
 	}
 
 	//倒计时（预约充电）
