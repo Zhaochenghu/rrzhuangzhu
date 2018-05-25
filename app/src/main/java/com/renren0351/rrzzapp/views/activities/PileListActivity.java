@@ -44,6 +44,7 @@ import com.umeng.socialize.shareboard.SnsPlatform;
 import com.umeng.socialize.utils.ShareBoardlistener;
 
 import java.lang.ref.WeakReference;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -303,9 +304,13 @@ public class PileListActivity extends LvBaseAppCompatActivity implements Station
 					}
 				}
 			};
+            //列表按编号排序
+            Collections.sort(stationDetailBean.chargingPileList);
 			PileListActivity.Adapter adapter = new PileListActivity.Adapter(this,stationDetailBean.chargingPileList, listener);
 			mRecyclerView.setAdapter(adapter);
 		} else {
+            //列表按编号排序
+            Collections.sort(stationDetailBean.chargingPileList);
 			PileListActivity.Adapter adapter = (PileListActivity.Adapter) mRecyclerView.getAdapter();
 			adapter.setDataList(stationDetailBean.chargingPileList);
 			adapter.notifyDataSetChanged();
@@ -319,6 +324,8 @@ public class PileListActivity extends LvBaseAppCompatActivity implements Station
 
 	@Override
 	public void noOrder(String msg) {
+        //列表按编号排序
+        Collections.sort(detailBean.chargingPileList);
 		if (detailBean != null && detailBean.chargingPileList != null) {
 			OrderSettingActivity.navigation(stationId, cpId, gunId,
 					null, false, 0, null);

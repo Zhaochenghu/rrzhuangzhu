@@ -1,5 +1,7 @@
 package com.renren0351.model.bean;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class StationDetailBean {
 
   public List<ChargingPileListEntity> chargingPileList;
 
-  public static class ChargingPileListEntity implements Serializable{
+  public static class ChargingPileListEntity implements Serializable,Comparable<ChargingPileListEntity>{
     /**
      * cpinterfaceId : 00
      * state : 0001
@@ -56,7 +58,7 @@ public class StationDetailBean {
       if (cpId.length() <= 3) {
         return cpId;
       }
-      return cpId.substring(cpId.length() - 3, cpId.length()) + "号";
+      return cpId.substring(cpId.length() - 5, cpId.length()-1) + "号";
     }
 
     public String getPower() {
@@ -110,6 +112,11 @@ public class StationDetailBean {
       } else {
         return "离线";
       }
+    }
+    //列表按编号排序
+    @Override
+    public int compareTo(@NonNull ChargingPileListEntity another) {
+      return this.cpId.compareTo(another.cpId);
     }
   }
 }

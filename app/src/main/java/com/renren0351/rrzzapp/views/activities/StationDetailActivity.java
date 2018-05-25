@@ -49,6 +49,7 @@ import com.umeng.socialize.utils.ShareBoardlistener;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -347,9 +348,13 @@ public class StationDetailActivity extends LvBaseAppCompatActivity implements St
                     }
                 }
             };
+            //列表按编号排序
+            Collections.sort(stationDetailBean.chargingPileList);
             Adapter adapter = new Adapter(stationDetailBean.chargingPileList, listener);
             mRecyclerView.setAdapter(adapter);
         } else {
+            //列表按编号排序
+            Collections.sort(stationDetailBean.chargingPileList);
             Adapter adapter = (Adapter) mRecyclerView.getAdapter();
             adapter.setDataList(stationDetailBean.chargingPileList);
             adapter.notifyDataSetChanged();
@@ -363,6 +368,8 @@ public class StationDetailActivity extends LvBaseAppCompatActivity implements St
 
     @Override
     public void noOrder(String msg) {
+        //列表按编号排序
+        Collections.sort(detailBean.chargingPileList);
         if (detailBean != null && detailBean.chargingPileList != null) {
             OrderSettingActivity.navigation(stationId, itemGunsBean.cpId, itemGunsBean.gunId,
                 null, false, 0, null);
