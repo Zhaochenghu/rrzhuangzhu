@@ -1,5 +1,6 @@
 package com.renren0351.rrzzapp.views.fragments;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 
 import com.renren0351.rrzzapp.LvAppUtils;
 import com.renren0351.rrzzapp.R;
+import com.renren0351.rrzzapp.custom.ChargingDialog;
+import com.renren0351.rrzzapp.custom.DonutProgress;
 import com.renren0351.rrzzapp.event.StationStatusEvent;
 import com.renren0351.rrzzapp.event.StopQueryStatusEvent;
 import com.renren0351.rrzzapp.services.ServiceUtil;
@@ -31,6 +34,7 @@ import com.renren0351.model.response.StationStatusResponse;
 import com.renren0351.model.storage.AppInfosPreferences;
 import com.renren0351.presenter.appointment.QueryOrderContract;
 import com.renren0351.presenter.appointment.QueryOrderPresenter;
+import com.trello.rxlifecycle.ActivityEvent;
 import com.trello.rxlifecycle.FragmentEvent;
 
 import java.text.ParseException;
@@ -110,6 +114,8 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 	private OrderResponse.Order order;
 	private boolean isFirst;
 	private boolean isOrder;
+	private Dialog dialog;
+	private ChargingDialog       chargingDialog;
 
 	public static ChargingFragment newInstance() {
 		Bundle args = new Bundle();
@@ -170,7 +176,7 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 						AppInfosPreferences.get().setChargeStationName("");
 						AppInfosPreferences.get().setCharging("0");
 						//充电桩停止充电，删除充电状态
-						deleteStatus();
+					//	deleteStatus();
 						refreshStatus();
 						ServiceUtil.stopChargingQuery();
 					}
@@ -237,7 +243,7 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 		if (outA == 0 && outV == 0 && !"0003".equals(stationStatus.workstate)) {
 			AppInfosPreferences.get().setChargeStationName("");
 			AppInfosPreferences.get().setCharging("0");
-			deleteStatus();
+			//deleteStatus();
 			ServiceUtil.stopChargingQuery();
 			refreshStatus();
 		}
@@ -317,15 +323,19 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 	 */
 	private void stopStatus() {
 		Log.i(TAG, "stopStatus: running");
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("cpId", stationStatus.cpId);
+		map.put("cpinterfaceId", stationStatus.cpinterfaceId);
 		ApiComponentHolder.sApiComponent
 				.apiService()
-				.getStationStatus()
+				.getOtherStationStatus(map)
 				.take(1)
 				.compose(this.<StationStatusResponse>bindUntilEvent(FragmentEvent.DESTROY))
 				.compose(SchedulersCompat.<StationStatusResponse>applyNewSchedulers())
 				.subscribe(new SimpleSubscriber<StationStatusResponse>() {
 					@Override
 					public void onError(Throwable e) {
+						closeSubscription();
 						showNormal();
 						showToast("网络异常");
 					}
@@ -338,21 +348,25 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 									Log.i(TAG, "onNext: //非工作状态");
 									showNormal();
 									//app停止充电 删除状态
-									deleteStatus();
+									//deleteStatus();
 									closeSubscription();
 									//设置为停止状态
+									closeChargingDialog();
 									AppInfosPreferences.get().setCharging("0");
 									refreshStatus();
+									Toast.makeText(getActivity(), "桩停止后，请拔枪，否则会影响您下次正常充电", Toast.LENGTH_LONG).show();
 								}
 							} else {//没有充电数据
 								Log.i(TAG, "onNext: 没有充电数据");
 								showNormal();
 								closeSubscription();
+								closeChargingDialog();
 								AppInfosPreferences.get().setCharging("0");
 								refreshStatus();
 							}
 						} else {//出现错误
 							showNormal();
+							closeChargingDialog();
 							showToast(stationStatusResponse.msg);
 						}
 					}
@@ -380,7 +394,8 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 					public void onNext(ChargingResponse response) {
 						DebugLog.log("----------------------->" + response.charging.res);
 						if ("0".equals(response.charging.res)) {	//开始轮询
-							showLoading("正在停止...");
+							//showLoading("正在停止...");
+							showChargingDialog();
 							subscription = Observable.interval(0, 3, TimeUnit.SECONDS, Schedulers.trampoline())
 									.compose(SchedulersCompat.<Long>applyNewSchedulers())
 									.subscribe(new SimpleSubscriber<Long>() {
@@ -398,7 +413,6 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 						}
 					}
 				});
-		Toast.makeText(getActivity(), "充电完成，请拔枪，否则会影响您下次正常充电", Toast.LENGTH_LONG).show();
 	}
 
 	//倒计时（预约充电）
@@ -621,5 +635,39 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 					});
 		}
 
+	}
+
+	/**
+	 * 充电桩启动充电加载Dialog
+	 */
+	private void showChargingDialog(){
+		if (dialog == null) {
+			chargingDialog = new ChargingDialog();
+			dialog = chargingDialog.createDialog(getActivity(),"充电桩正在停止中...");
+			chargingDialog.getDonutProgress().setOnTimeFinishedListener(new DonutProgress.OnTimeFinishedListener() {
+				@Override
+				public void onFinished() {
+					closeChargingDialog();
+					closeSubscription();
+					showToast("充电桩停止失败");
+				}
+			});
+			dialog.setCancelable(false);
+			dialog.show();
+		}else if ( !dialog.isShowing()){
+			dialog.show();
+		}
+	}
+
+	/**
+	 * 关闭启动充电Dialog
+	 */
+	public void closeChargingDialog(){
+		if (dialog != null && dialog.isShowing()){
+			chargingDialog.close();
+			chargingDialog = null;
+			dialog.dismiss();
+			dialog = null;
+		}
 	}
 }
