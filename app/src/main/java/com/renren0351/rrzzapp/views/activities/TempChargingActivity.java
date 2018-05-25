@@ -132,7 +132,7 @@ public class TempChargingActivity extends LvBaseAppCompatActivity {
 
 	private Observable<StationStatusResponse.StationStatus> createChargingObservable() {
 		HashMap<String, Object> map = new HashMap<>();
-		map.put("substationId", stationId);
+		//map.put("substationId", stationId);
 		map.put("cpId", pileCode);
 		map.put("cpinterfaceId", cpInterfaceId);
 		return ApiComponentHolder.sApiComponent.apiService()
