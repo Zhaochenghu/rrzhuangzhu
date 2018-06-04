@@ -143,7 +143,7 @@ public class SplashActivity extends LvBaseAppCompatActivity{
             return;
         }
         dialog = new AlertDialog.Builder(this)
-            .setMessage("关闭定位功能，应用将无法使用，建议您在设置中开启")
+            .setMessage("取消授权定位功能，应用将无法使用，建议您在设置中开启")
             .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
