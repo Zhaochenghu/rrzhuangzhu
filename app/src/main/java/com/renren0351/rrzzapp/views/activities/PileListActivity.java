@@ -386,7 +386,7 @@ public class PileListActivity extends LvBaseAppCompatActivity implements Station
 				holder.pilePower.setText(cpe.getPower());
 			}
 
-			holder.pileState.setText(cpe.getState());
+			holder.pileState.setText(cpe.getGunState(1));
 			holder.itemView.setTag(cpe);
 
 			// 以下是显示枪的逻辑
