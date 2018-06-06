@@ -223,9 +223,9 @@ public class PayRecordActivity extends LvBaseAppCompatActivity {
                 holder.tvCode.setText(String.format("%s：%s", batchName, bean.batch));
 
                 if (!LvTextUtil.isEmpty(bean.transtime)) {
-                    holder.tvDate.setText(String.format("充电日期：%s", bean.transtime));
+                    holder.tvDate.setText(String.format("结算时间：%s", bean.transtime));
                 } else {
-                    holder.tvDate.setText(String.format("充电日期：%s", bean.startTime));
+                    holder.tvDate.setText(String.format("结算时间：%s", bean.startTime));
                 }
 
                 holder.tvType.setText(String.format("支付方式：%s", bean.getPayType()));
@@ -244,9 +244,9 @@ public class PayRecordActivity extends LvBaseAppCompatActivity {
                 holder.tvCode.setText(String.format("%s：%s", batchName,bean.batch));
 
                 if (!LvTextUtil.isEmpty(bean.transtime)){
-                    holder.tvDate.setText(String.format("充电日期：%s", bean.transtime));
+                    holder.tvDate.setText(String.format("结算时间：%s", bean.transtime));
                 }else {
-                    holder.tvDate.setText(String.format("充电日期：%s", bean.startTime));
+                    holder.tvDate.setText(String.format("结算时间：%s", bean.startTime));
                 }
 
                 holder.tvType.setText(String.format("支付方式：%s", bean.getPayType()));
@@ -279,7 +279,7 @@ public class PayRecordActivity extends LvBaseAppCompatActivity {
             @BindView(R.id.tv_station_name)
             TextView tvName;    //充电子站
             @BindView(R.id.tv_record_date)
-            TextView tvDate;    //充电日期
+            TextView tvDate;    //结算时间
             @BindView(R.id.tv_record_type)
             TextView tvType;    //支付方式
             @BindView(R.id.tv_record_money)
