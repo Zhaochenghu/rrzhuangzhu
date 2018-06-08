@@ -16,7 +16,7 @@
             android:textColor="@color/primary_text_black"
             android:textSize="@dimen/ts_lel_one"
             android:padding="15dp"
-            android:visibility="gone"/>
+            />
         <View
             style="@style/Mime_Horizontal_line"/>
         <TextView

@@ -47,7 +47,7 @@ import rx.functions.Action1;
  * <p>
  * 首页
  ********************************/
-public class MainFragment extends LvBaseMainFragment implements MainContract.View/*, FeeContract.View*/ {
+public class MainFragment extends LvBaseMainFragment implements MainContract.View, FeeContract.View {
 
     public static final int FIRST  = 0;
     public static final int SECOND = 1;
@@ -85,7 +85,7 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
         mainPresenter = new MainPresenter();
         feePresenter = new FeePresenter();
         mainPresenter.attachView(this);
-      //  feePresenter.attachView(this);
+       feePresenter.attachView(this);
     }
 
     @Override
@@ -180,7 +180,7 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
                 public void call(ShowChargingInfoEvent showChargingInfoEvent) {
                     if (showChargingInfoEvent.isShow) {
                         substationBean = showChargingInfoEvent.substationBean;
-                       // feePresenter.queryFees(substationBean.areaId);
+                        feePresenter.queryFees(substationBean.areaId);
                         orderView.refreshData(substationBean);
                         orderView.show();
 //              mainPresenter.getSubstationSummary(substationBean.s_id);
@@ -269,11 +269,11 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
     /**
      * OrderView中的费用点击事件
      */
-/*    @OnClick(R.id.tv_service)
+    @OnClick(R.id.tv_service)
     public void feeDetail() {
         //跳转到FeeActivity
         FeeActivity.navigation(substationBean.areaId, substationBean.areaName);
-    }*/
+    }
 
     /**
      * --------------------
@@ -323,11 +323,11 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
         // hasTotalDC
     }
 
-   /* @Override
+    @Override
     public void getFees(List<FeeBean> list) {  //刷新费用信息
         float[] fee = FeeUtils.getCurrentFree(list);
         if (!orderView.isHiding()) {
             orderView.refreshFee(fee[0], fee[1], 0f);
         }
-    }*/
+    }
 }

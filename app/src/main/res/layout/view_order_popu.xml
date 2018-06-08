@@ -139,6 +139,7 @@
                 android:paddingRight="10dp"
                 android:layout_below="@id/view_divider_1"
                 android:layout_toRightOf="@id/iv_rmb"
+                android:drawableRight="@drawable/ic_right"
                 android:lineSpacingExtra="3dp"
                 android:paddingBottom="@dimen/activity_horizontal_margin_sub"
                 android:paddingTop="@dimen/activity_horizontal_margin_sub"

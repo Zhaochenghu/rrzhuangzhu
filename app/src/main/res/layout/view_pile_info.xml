@@ -136,7 +136,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp"
-        android:visibility="gone">
+        >
         <TextView
             android:drawableTop="@drawable/ic_fee96"
             android:gravity="center"

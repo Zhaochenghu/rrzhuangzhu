@@ -93,7 +93,7 @@ public class OrderView extends FrameLayout {
     tvAc.setText(String.format("空闲 %d /共 %d", substationBean.hasRestAC, substationBean.hasTotalAC));
     tvDc.setText(String.format("空闲 %d /共 %d", substationBean.hasRestDC, substationBean.hasTotalDC));
 //费用模板
-    tvService.setText("充电费:" + substationBean.chargingFee + "\r\n服务费:" + substationBean.serviceFee + "\r\n停车费:"+substationBean.stopFee);
+   // tvService.setText("充电费:" + substationBean.chargingFee + "\r\n服务费:" + substationBean.serviceFee + "\r\n停车费:"+substationBean.stopFee);
     //地址：乐园大街\n运营时间： 6:00 - 24:00
     tvAddr.setText(String.format("地址：%s \r\n运营时间：%s", substationBean.address, substationBean.serviceTime));
     //支付方式：微信、支付宝、账户余额\n运营商：双杰\n服务电话：95588
@@ -180,11 +180,11 @@ public class OrderView extends FrameLayout {
    * @param sValue 服务费
    * @param pValue 停车费
    */
-  /*public void refreshFee(float eValue, float sValue, float pValue){
+  public void refreshFee(float eValue, float sValue, float pValue){
     if (pValue == 0f){
       tvService.setText(String.format("充电费：%.2f 元/度\r\n服务费：%.2f 元/度\r\n停车费：无", eValue,sValue));
     }else {
       tvService.setText(String.format("充电费：%.2f 元/度\r\n服务费：%.2f 元/度\r\n停车费：%.2f 元/小时", eValue,sValue,pValue));
     }
-  }*/
+  }
 }

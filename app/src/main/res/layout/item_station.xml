@@ -166,7 +166,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="充电费："
+                        android:text=""
                         android:textSize="12sp"/>
                     <TextView
                         android:id="@+id/tv_electric_fee"
@@ -187,7 +187,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="服务费："
+                        android:text=""
                         android:textSize="12sp"/>
                     <TextView
                         android:id="@+id/tv_service_fee"
@@ -208,7 +208,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="停车费："
+                        android:text=""
                         android:textSize="12sp"/>
                     <TextView
                         android:id="@+id/tv_park_fee"
