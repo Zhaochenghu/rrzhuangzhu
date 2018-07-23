@@ -97,7 +97,7 @@ public class LoginPresenterTest {
   }
 
   private void preLogin(Observable<LoginResponse> observable) {
-    LoginRequest request = new LoginRequest("18610935308", "123456");
+    LoginRequest request = new LoginRequest("18610935308", "123456","0021");
 
     when(loginCase.params(request)).thenReturn(loginCase);
     when(loginCase.createObservable(request)).thenReturn(observable);

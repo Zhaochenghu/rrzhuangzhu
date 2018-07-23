@@ -38,7 +38,6 @@ public class SettingActivity extends LvBaseAppCompatActivity {
 
     @BindView(R.id.setting_bt_exit)
     Button btExit;
-
     public static void navigation() {
         ARouter.getInstance().build("/login/mime/setting").navigation();
     }
@@ -175,9 +174,12 @@ public class SettingActivity extends LvBaseAppCompatActivity {
      * 重新获取充电站数据
      */
     private static void getSubstations() {
+        HashMap<String, Object> request;
+        request = new HashMap<>();
+        request.put("companyCode", "0021");
         ApiComponentHolder.sApiComponent
                 .apiService()
-                .getSubstation()
+                .getSubstation(request)
                 .compose(SchedulersCompat.<SubstationsResponse>applyNewSchedulers())
                 .doOnNext(new Action1<SubstationsResponse>() {
                     @Override

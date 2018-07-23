@@ -8,10 +8,12 @@ public class RegisterRequest {
     public String username;
     public String password;
     public String captcha;
-
-    public RegisterRequest(String username, String password, String captcha) {
+    //注册添加运营商区分
+    public String companyCode;
+    public RegisterRequest(String username, String password, String captcha,String compayCode) {
         this.username = username;
         this.password = password;
         this.captcha = captcha;
+        this.companyCode =  compayCode;
     }
 }

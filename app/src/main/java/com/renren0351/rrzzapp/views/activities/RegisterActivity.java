@@ -119,7 +119,7 @@ public class RegisterActivity extends LvBaseAppCompatActivity implements Registe
                 String psd = etPsd.getText().toString();
                 String captcha = etCode.getText().toString();
 
-                RegisterRequest request = new RegisterRequest(num, psd, captcha);
+                RegisterRequest request = new RegisterRequest(num, psd, captcha,"0021");
                 presenter.hpRegister(request);
                 break;
         }
