@@ -14,9 +14,9 @@ import rx.Observable;
  ********************************/
 public interface WxpayService {
 
-    @POST("pay/unifiedprder/cs")
+    @POST("pay/unifiedprder/cs0021")
     Observable<WxOrderResponse> placeAnOrder(@Body WxOrderRequest request);
 
-    @POST("pay/orderquery/cs")
+    @POST("pay/orderquery/cs0021")
     Observable<WxOrderQueryResponse> queryOrder(@Body WxOrderQueryRequest request);
 }
