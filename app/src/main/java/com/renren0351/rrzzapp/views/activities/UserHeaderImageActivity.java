@@ -4,14 +4,17 @@ import android.Manifest;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -80,7 +83,6 @@ public class UserHeaderImageActivity extends LvBaseAppCompatActivity {
     public void clickFromAlbum() {
         UserHeaderImageActivityPermissionsDispatcher.openAlbumWithPermissionWithCheck(this);
     }
-
     private Uri    imageUri;
     // 最后剪裁后的路径
     private String headCropPath;
@@ -88,9 +90,44 @@ public class UserHeaderImageActivity extends LvBaseAppCompatActivity {
     //相机
     @OnClick(R.id.bt_camera)
     public void clickFromCamera() {
-        UserHeaderImageActivityPermissionsDispatcher.openCameraWithPermissionWithCheck(this);
+        //        checkSelfPermission 检测有没有 权限
+//        PackageManager.PERMISSION_GRANTED 有权限
+//        PackageManager.PERMISSION_DENIED  拒绝权限
+        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            //权限发生了改变 true  //  false 小米
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CAMERA)){
+                new AlertDialog.Builder(this).setTitle("拍照需要相机权限，是否开启")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // 请求授权
+                                ActivityCompat.requestPermissions(UserHeaderImageActivity.this,
+                                        new String[]{Manifest.permission.CAMERA},1);
+                            }
+                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create().show();
+            }else {
+                ActivityCompat.requestPermissions(UserHeaderImageActivity.this,new String[]{Manifest.permission.CAMERA},1);
+            }
+        }else{
+            UserHeaderImageActivityPermissionsDispatcher.openCameraWithPermissionWithCheck(this);
+           // camear();
+        }
     }
-
+    /**
+     * 开启相机
+     */
+    public void camear(){
+        try {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent,1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -235,6 +272,18 @@ public class UserHeaderImageActivity extends LvBaseAppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == 1){
+            // camear 权限回调
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                // 表示用户授权
+               // Toast.makeText(this, " user Permission" , Toast.LENGTH_SHORT).show();
+              //  camear();
+                UserHeaderImageActivityPermissionsDispatcher.openCameraWithPermissionWithCheck(this);
+            } else {
+                //用户拒绝权限
+                Toast.makeText(this, "您关闭了相机授权" , Toast.LENGTH_SHORT).show();
+            }
+        }
         UserHeaderImageActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
     }
 
