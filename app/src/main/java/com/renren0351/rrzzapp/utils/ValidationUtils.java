@@ -55,7 +55,8 @@ public class ValidationUtils {
      */
     public boolean psdValidate(EditText editText) {
         String psd = editText.getText().toString().trim();
-        String psdRegex = ".*[a-zA-Z].*[0-9]|.*[0-9].*[a-zA-Z]"; // 密码必须由数字和字母组成
+       // String psdRegex = ".*[a-zA-Z].*[0-9]|.*[0-9].*[a-zA-Z]"; // 密码必须由数字和字母组成
+        String psdRegex = "^(?![^a-zA-Z]+$)(?!\\D+$)[a-zA-Z0-9]{6,}$";
         if (LvTextUtil.isEmpty(psd)) {
 //      prompt(editText, "请输入密码");
             return false;
