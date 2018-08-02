@@ -239,6 +239,8 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 		this.stationStatus = stationStatus;
 		int outV = Integer.valueOf(stationStatus.outV);
 		int outA = Integer.valueOf(stationStatus.outA);
+		float outV1 = Float.valueOf(stationStatus.outV);
+		float outA1 = Float.valueOf(stationStatus.outA);
 		//判断充电桩是否充电
 		if (outA == 0 && outV == 0 && !"0003".equals(stationStatus.workstate)) {
 			AppInfosPreferences.get().setChargeStationName("");
@@ -278,10 +280,10 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 		float fee = Float.valueOf(stationStatus.serviceFee);
 		tvChargingPay.setText(String.format("%.2f 元", fee / 100)); // 充电费用
 
-		tvChargingV.setText(String.format("%d V", outV / 10)); // 充电电压
-		tvChargingA.setText(String.format("%d A", outA / 10)); // 充电电流
+		tvChargingV.setText(String.format("%.2f V", outV1 / 10)); // 充电电压
+		tvChargingA.setText(String.format("%.2f A", outA1 / 10)); // 充电电流
 		//tvChargingP.setText(stationStatus.getPower()); // 充电功率
-		tvChargingP.setText(String.format("%d W", outV / 10 * outA / 10 ));
+		tvChargingP.setText(String.format("%.2f KW", outV1 / 10 * outA1 / 10 / 1000));
 	}
 
 	/**
