@@ -100,7 +100,7 @@ public class RegisterActivity extends LvBaseAppCompatActivity implements Registe
                 }
 
                 if (LvTextUtil.isEmpty(etPsd.getText().toString()) || !validate.psdValidate(etPsd)){
-                    showToast("密码错误");
+                    showToast("密码必须是数字和字母的组合");
                     return;
                 }
 
