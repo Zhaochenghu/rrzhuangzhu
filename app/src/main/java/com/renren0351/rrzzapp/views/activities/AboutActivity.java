@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.renren0351.rrzzapp.LvAppUtils;
 import com.renren0351.rrzzapp.R;
 import com.renren0351.rrzzapp.services.CoreService;
 import com.renren0351.rrzzapp.utils.IntentUtils;
@@ -70,7 +71,8 @@ public class AboutActivity extends LvBaseAppCompatActivity {
                 AboutUsActivity.navigation();
                 break;
             case R.id.about_ll_update:  //检查更新
-                AboutActivityPermissionsDispatcher.startCheckingWithCheck(this);
+               // AboutActivityPermissionsDispatcher.startCheckingWithCheck(this);
+                LvAppUtils.appUpdate(this);
                 break;
             case R.id.about_ll_suggest: //投诉建议
                 SuggestActivity.navigation();

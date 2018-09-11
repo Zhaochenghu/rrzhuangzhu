@@ -1,5 +1,6 @@
 package com.renren0351.rrzzapp.services;
 
+import android.annotation.SuppressLint;
 import android.app.DownloadManager;
 import android.app.Service;
 import android.content.DialogInterface;
@@ -139,12 +140,12 @@ public class CoreService extends Service {
     }
 
     private void downLoadFile(String url) {
-        DownloadManager downloadManager =
+        @SuppressLint("WrongConstant") DownloadManager downloadManager =
             (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(url);
         DownloadManager.Request request = new DownloadManager.Request(uri);
         request.setDestinationInExternalPublicDir("download", "jiedian.apk");
-        request.setDescription("杰电应用下载中");
+        request.setDescription("人人桩主应用下载中");
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setVisibleInDownloadsUi(true);
         request.setMimeType("application/vnd.android.package-archive");

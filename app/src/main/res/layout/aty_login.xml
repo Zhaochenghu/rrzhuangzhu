@@ -79,6 +79,14 @@
 
     <ImageView
         style="@style/Mime_Horizontal_line"/>
+   <!-- <CheckBox
+        android:id="@+id/cb_jizhumima"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_sub"
+        android:text="记住密码"
+        android:textSize="@dimen/ts_lel_two"/>-->
 
     <Button
         android:id="@+id/login_bt_login"
