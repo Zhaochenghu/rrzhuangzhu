@@ -127,7 +127,7 @@
             android:textSize="@dimen/ts_lel_three"
             android:visibility="gone"/>
 
-        <com.renren0351.rrzzapp.custom.PsdInputView
+        <com.bxchongdian.app.custom.PsdInputView
             android:id="@+id/view_set_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

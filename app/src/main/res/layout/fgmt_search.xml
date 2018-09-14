@@ -109,7 +109,7 @@
             android:background="@color/lv_bottom_divider"/>
 
         <!-- 显示历史 -->
-        <com.renren0351.rrzzapp.wigets.flexbox.TagFlowLayout
+        <com.bxchongdian.app.wigets.flexbox.TagFlowLayout
             android:id="@+id/flow_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

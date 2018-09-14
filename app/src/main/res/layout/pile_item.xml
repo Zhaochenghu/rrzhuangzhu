@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
                 <!-- 显示枪口 -->
-                <com.renren0351.rrzzapp.wigets.flexbox.TagFlowLayout
+                <com.bxchongdian.app.wigets.flexbox.TagFlowLayout
                     android:id="@+id/flow_layout_min"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -143,7 +143,7 @@
         </LinearLayout>
     </LinearLayout>
     <!--大于两个充电枪时在下面显示-->
-    <com.renren0351.rrzzapp.wigets.flexbox.TagFlowLayout
+    <com.bxchongdian.app.wigets.flexbox.TagFlowLayout
         android:id="@+id/flow_layout_max"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

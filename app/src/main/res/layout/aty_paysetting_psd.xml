@@ -19,7 +19,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/input_pay_code"/>
 
-        <com.renren0351.rrzzapp.custom.PsdInputView
+        <com.bxchongdian.app.custom.PsdInputView
             android:id="@+id/payset_psdinput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

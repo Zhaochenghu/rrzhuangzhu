@@ -6,7 +6,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.renren0351.rrzzapp.views.activities.MainActivity">
+    tools:context="com.bxchongdian.app.views.activities.MainActivity">
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/bottomNavigation"
@@ -30,7 +30,7 @@
         android:layout_height="match_parent"
         android:layout_above="@id/view_1"/>
 
-    <com.renren0351.rrzzapp.wigets.OrderView
+    <com.bxchongdian.app.wigets.OrderView
         android:id="@+id/view_order"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.renren0351.rrzzapp.custom.DrawableCenterTextView
+    <com.bxchongdian.app.custom.DrawableCenterTextView
         android:id="@+id/grid_bt_keys"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

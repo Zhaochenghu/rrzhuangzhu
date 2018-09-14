@@ -124,7 +124,7 @@
         android:paddingLeft="72dp"
         android:paddingRight="72dp">
 
-        <com.renren0351.rrzzapp.wigets.ProgressCircleView
+        <com.bxchongdian.app.wigets.ProgressCircleView
             android:id="@+id/pcv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

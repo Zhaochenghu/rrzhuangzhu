@@ -7,7 +7,7 @@
     android:background="@android:color/transparent"
     android:orientation="vertical">
 
-    <com.renren0351.rrzzapp.wigets.SwipeFrameLayout
+    <com.bxchongdian.app.wigets.SwipeFrameLayout
         android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -195,5 +195,5 @@
                 android:visibility="visible"/>
         </RelativeLayout>
 
-    </com.renren0351.rrzzapp.wigets.SwipeFrameLayout>
+    </com.bxchongdian.app.wigets.SwipeFrameLayout>
 </FrameLayout>

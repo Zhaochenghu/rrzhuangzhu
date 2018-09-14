@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.renren0351.rrzzapp">
+          package="com.bxchongdian.app">
 
     <!--以下高德地图基础权限-->
     <!--允许程序打开网络套接字-->
@@ -36,7 +36,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
-        android:name="com.renren0351.rrzzapp.LvApplication"
+        android:name="com.bxchongdian.app.LvApplication"
         tools:replace="android:allowBackup"
         android:allowBackup="true"
         android:debuggable="true"
@@ -47,15 +47,15 @@
 
         <!--58c5fad304e205a5bc00063c Umeng-->
         <meta-data android:name="UMENG_APPKEY"
-                   android:value="5addc702f29d987d0400004f"/>
+            android:value="5b569dc6a40fa37c7700018d"/>
         <meta-data android:name="UMENG_CHANNEL"
-                   android:value="ChannelID"/>
+            android:value="ChannelID"/>
         <!--gaode map-->
         <meta-data android:name="com.amap.api.v2.apikey"
-                   android:value="9c618bd41525e46c4f1adce71333b9aa"/>
+            android:value="06520c40d6b34aee147fed792c360dc1"/>
 
         <!-- SplashActivity -->
-        <activity android:name="com.renren0351.rrzzapp.views.activities.SplashActivity">
+        <activity android:name="com.bxchongdian.app.views.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -63,72 +63,86 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.renren0351.rrzzapp.views.activities.MainActivity"
+        <activity android:name="com.bxchongdian.app.views.activities.MainActivity"
                   android:launchMode="singleTask"
             >
         </activity>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.GPSNaviActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.AboutActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.CarActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.CardActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.MessageActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.MoneyActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.StopdialogActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.PileActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.SettingActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.ScanActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.SnInputActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.ForgotPsdActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.CollectionActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.LoginActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.RegisterActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.ChargingActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.PaySettingVerify"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.PayPasswordActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.RechargeRecordActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.StationInfoActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.StationDetailActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.BalanceInfoActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.TempChargingActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.PayRecordActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.PayDetailsActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.BindCardActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.BindCarActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.CarSelectActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.CarInfoActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.SuggestActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.AboutUsActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.BillActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.OrderSettingActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.ChangePswActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.FeeActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.PileListActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.GPSNaviActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.AboutActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.CarActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.CardActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.MessageActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.MoneyActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.StopdialogActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.PileActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.SettingActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.ScanActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.SnInputActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.ForgotPsdActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.CollectionActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.LoginActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.RegisterActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.ChargingActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.PaySettingVerify"/>
+        <activity android:name="com.bxchongdian.app.views.activities.PayPasswordActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.RechargeRecordActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.StationInfoActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.StationDetailActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.BalanceInfoActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.TempChargingActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.PayRecordActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.PayDetailsActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.BindCardActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.BindCarActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.CarSelectActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.CarInfoActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.SuggestActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.AboutUsActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.BillActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.OrderSettingActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.ChangePswActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.FeeActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.PileListActivity"/>
         <activity
-            android:name="com.renren0351.rrzzapp.views.activities.BillInfoActivity"
+            android:name="com.bxchongdian.app.views.activities.BillInfoActivity"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.ErrorCorrectionActivity"
+        <activity android:name="com.bxchongdian.app.views.activities.ErrorCorrectionActivity"
                   android:windowSoftInputMode="adjustPan|stateHidden"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.ErrorCorrectionLocationActivity"/>
-        <activity android:name="com.renren0351.rrzzapp.views.activities.UserHeaderImageActivity"/>
-
-        <!-- wechat callback-->
+        <activity android:name="com.bxchongdian.app.views.activities.ErrorCorrectionLocationActivity"/>
+        <activity android:name="com.bxchongdian.app.views.activities.UserHeaderImageActivity"/>
+        <!--alipay 支付宝-->
         <activity
-            android:name="com.renren0351.rrzzapp.wxapi.WXEntryActivity"
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <!-- wechat 微信-->
+        <activity
+            android:name="com.bxchongdian.app.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <activity
-            android:name="com.renren0351.rrzzapp.wxapi.WXPayEntryActivity"
+            android:name="com.bxchongdian.app.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTask"/>
 
-        <service android:name="com.renren0351.rrzzapp.services.CoreService"/>
+        <service android:name="com.bxchongdian.app.services.CoreService"/>
         <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
         <service android:name="com.amap.api.location.APSService"/>
 
         <receiver
-            android:name="com.renren0351.rrzzapp.receivers.DownloadReceiver"
+            android:name="com.bxchongdian.app.receivers.DownloadReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

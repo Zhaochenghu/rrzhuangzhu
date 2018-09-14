@@ -11,7 +11,7 @@
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_rrzhuangzhu"
+        android:src="@drawable/ic_bxchongdian"
         android:layout_below="@id/line1"
         android:layout_centerHorizontal="true"/>
     <TextView
@@ -20,11 +20,11 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="人 人 桩 主"
+        android:text="百祥充电"
         android:layout_centerHorizontal="true"
         android:textColor="@color/primary_text_black"
         android:textSize="@dimen/ts_lel_two"/>
-    <com.renren0351.rrzzapp.custom.JustifyTextView
+    <com.bxchongdian.app.custom.JustifyTextView
         android:layout_below="@id/line3"
         android:padding="20dp"
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="国晶售电有限公司"
+            android:text="山西百祥盛世网络科技有限公司"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/primary_text_black"/>
         <TextView
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="0351-837-1089"
+            android:text="159-3409-9126"
             android:textStyle="italic"/>
         <TextView
             android:layout_marginTop="5dp"

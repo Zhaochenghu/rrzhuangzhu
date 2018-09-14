@@ -21,11 +21,11 @@ android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
-        applicationId "com.renren0351.rrzzapp"
+        applicationId "com.bxchongdian.app"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
-        versionName "2.0.6"
+        versionName "1.2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         // annotationProcessor 传参 for arouter
         javaCompileOptions {
@@ -112,6 +112,7 @@ dependencies {
     }
     annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:2.4.0"
     compile files('libs/pgyer_sdk_2.7.0.jar')
+    compile files('libs/alipaySdk-20180601.jar')
 }
 
 // ====== for package

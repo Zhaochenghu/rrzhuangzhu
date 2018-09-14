@@ -304,7 +304,7 @@ public class SpfProcessor extends AbstractProcessor {
     List<TypeSpec> typeSpecs = getInClassTypeSpec(inClassElements);
     MethodSpec.Builder constructor = MethodSpec.constructorBuilder()
         .addModifiers(Modifier.PUBLIC)
-        .addStatement("mPreferences = $T.getContext().getSharedPreferences($S, 0)", ClassName.get("com.renren0351.model.storage", "AptPreferencesManager"), typeElement.getSimpleName())
+        .addStatement("mPreferences = $T.getContext().getSharedPreferences($S, 0)", ClassName.get("com.bxchongdian.model.storage", "AptPreferencesManager"), typeElement.getSimpleName())
         .addStatement("mEdit = mPreferences.edit()");
     for (TypeSpec typeSpec : typeSpecs) {
       constructor.addStatement(String.format("this.set%s(new %s())", typeSpec.name.replace("Preferences", ""), typeSpec.name));

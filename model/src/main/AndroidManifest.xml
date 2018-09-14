@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.renren0351.model">
+          package="com.bxchongdian.model">
 
     <application
         android:allowBackup="true"

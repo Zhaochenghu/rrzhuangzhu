@@ -15,7 +15,7 @@
         android:textColor="@color/primary_text_black"
         android:gravity="center"
         android:text=""/>
-    <com.renren0351.rrzzapp.wigets.BarChartView
+    <com.bxchongdian.app.wigets.BarChartView
         android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
